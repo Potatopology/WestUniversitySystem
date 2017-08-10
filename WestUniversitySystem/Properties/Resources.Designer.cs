@@ -133,6 +133,26 @@ namespace WestUniversitySystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LogoMakr__3_ {
+            get {
+                object obj = ResourceManager.GetObject("LogoMakr (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoMakr__4_ {
+            get {
+                object obj = ResourceManager.GetObject("LogoMakr (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap UNIVERSITY_OF_THE_WEST__1_ {
             get {
                 object obj = ResourceManager.GetObject("UNIVERSITY OF THE WEST (1)", resourceCulture);
