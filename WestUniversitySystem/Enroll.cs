@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Configuration;
+using System.Windows.Forms;
+
+namespace WestUniversitySystem
+{
+    class Enroll
+    {
+        static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
+
+        public static bool Connect(string usercode, string password)
+        {
+            MySqlConnection myConn = null;
+            MySqlDataReader myReader = null;
+            bool isFound = false;
+            try
+            {
+                myConn = new MySqlConnection(connection);
+                MySqlCommand SelectCommand = new MySqlCommand("Select * from enroldb.user where Username='" + usercode + "' And Password ='" + password + "';", myConn);
+                myConn.Open();
+                myReader = SelectCommand.ExecuteReader();
+                int count = 0;
+                while (myReader.Read())
+                {
+                    count = count + 1;
+                }
+                if (count == 1)
+                {
+                    isFound = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+                myReader.Close();
+            }
+            return isFound;
+        }
+    }
+}
