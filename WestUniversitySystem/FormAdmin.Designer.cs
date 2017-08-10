@@ -92,6 +92,7 @@
             this.btnAccount.TabIndex = 16;
             this.btnAccount.Text = "CREATE STUDENT ACCOUNT";
             this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnSubject
             // 
@@ -106,6 +107,7 @@
             this.btnSubject.TabIndex = 18;
             this.btnSubject.Text = "EDIT SUBJECT OFFERING";
             this.btnSubject.UseVisualStyleBackColor = false;
+            this.btnSubject.Click += new System.EventHandler(this.btnSubject_Click);
             // 
             // btnFee
             // 
@@ -120,6 +122,7 @@
             this.btnFee.TabIndex = 19;
             this.btnFee.Text = "CHANGE FEES";
             this.btnFee.UseVisualStyleBackColor = false;
+            this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
             // 
             // btnLogout
             // 
@@ -134,6 +137,7 @@
             this.btnLogout.TabIndex = 20;
             this.btnLogout.Text = "LOGOUT";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // pictureBox2
             // 
@@ -169,6 +173,7 @@
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "University of the West | Admin";
+            this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

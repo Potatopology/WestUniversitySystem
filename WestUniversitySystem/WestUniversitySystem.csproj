@@ -55,11 +55,29 @@
     <Compile Include="FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFee.Designer.cs">
+      <DependentUpon>FormFee.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStudentAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudentAccount.Designer.cs">
+      <DependentUpon>FormStudentAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSubjectOffering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSubjectOffering.Designer.cs">
+      <DependentUpon>FormSubjectOffering.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
