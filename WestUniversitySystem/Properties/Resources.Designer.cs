@@ -63,9 +63,39 @@ namespace WestUniversitySystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adminPic {
+            get {
+                object obj = ResourceManager.GetObject("adminPic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Close_Window_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-Close Window-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Contacts_512 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-Contacts-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Contacts_512__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-Contacts-512 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
