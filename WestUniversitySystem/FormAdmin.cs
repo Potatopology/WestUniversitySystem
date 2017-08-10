@@ -12,6 +12,13 @@ namespace WestUniversitySystem
 {
     public partial class FormAdmin : Form
     {
+        private string Nm;
+        public string Passvalue
+        {
+            get { return Nm; }
+            set { Nm = value; }
+        }
+
         public FormAdmin()
         {
             InitializeComponent();
@@ -47,7 +54,7 @@ namespace WestUniversitySystem
         {
             FormLogin form = new FormLogin();
             form.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

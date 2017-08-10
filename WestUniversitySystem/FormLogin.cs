@@ -32,7 +32,19 @@ namespace WestUniversitySystem
         {
             if (EnrollDatabase.Login(txtUser.Text, txtPassword.Text, cmbType.Text))
             {
-                MessageBox.Show("Login successful!", "Logged In");
+                if (cmbType.Text == "admin")
+                {
+                    FormAdmin form = new FormAdmin();
+                    //form.Passvalue = usercode;
+                    form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    FormStudentEnroll form = new FormStudentEnroll();
+                    form.Show();
+                    this.Hide();
+                }
             }
             else
             {
