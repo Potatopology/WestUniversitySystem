@@ -30,13 +30,13 @@ namespace WestUniversitySystem
         
         private void Login()
         {
-            if (Enroll.Connect(txtUser.Text, txtPassword.Text, cmbType.Text))
+            if (EnrollDatabase.Login(txtUser.Text, txtPassword.Text, cmbType.Text))
             {
-                MessageBox.Show("Logged In Successfully!", "Logged In");
+                MessageBox.Show("Login successful!", "Logged In");
             }
             else
             {
-                MessageBox.Show("Unauthorized user!", "Incorrect", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Incorrect SN or password", "Unauthorized User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

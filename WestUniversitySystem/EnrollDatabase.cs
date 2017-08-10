@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace WestUniversitySystem
 {
-    class Enroll
+    class EnrollDatabase
     {
         static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
-        public static bool Connect(string usercode, string password, string type)
+        public static bool Login(string usercode, string password, string type)
         {
             MySqlConnection myConn = new MySqlConnection();
             MySqlDataReader myReader = null;
