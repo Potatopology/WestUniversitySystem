@@ -20,12 +20,17 @@ namespace WestUniversitySystem
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            
+            cmbType.SelectedIndex = 0;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (Enroll.Connect(txtUser.Text, txtPassword.Text))
+            Login();
+        }
+        
+        private void Login()
+        {
+            if (Enroll.Connect(txtUser.Text, txtPassword.Text, cmbType.Text))
             {
                 MessageBox.Show("Logged In Successfully!", "Logged In");
             }
@@ -34,8 +39,6 @@ namespace WestUniversitySystem
                 MessageBox.Show("Unauthorized user!", "Incorrect", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        
-
 
 
 

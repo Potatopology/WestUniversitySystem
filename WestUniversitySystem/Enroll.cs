@@ -13,15 +13,23 @@ namespace WestUniversitySystem
     {
         static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
-        public static bool Connect(string usercode, string password)
+        public static bool Connect(string usercode, string password, string type)
         {
-            MySqlConnection myConn = null;
+            MySqlConnection myConn = new MySqlConnection();
             MySqlDataReader myReader = null;
             bool isFound = false;
             try
             {
                 myConn = new MySqlConnection(connection);
-                MySqlCommand SelectCommand = new MySqlCommand("Select * from enroldb.user where Username='" + usercode + "' And Password ='" + password + "';", myConn);
+                MySqlCommand SelectCommand = new MySqlCommand();
+                if (type == "student")
+                {
+                    SelectCommand = new MySqlCommand("Select * from enroldb.student_info where SN='" + usercode + "' And Password ='" + password + "';", myConn);
+                }
+                else if(type == "admin")
+                {
+                    SelectCommand = new MySqlCommand("Select * from enroldb.user where Username='" + usercode + "' And Password ='" + password + "';", myConn);
+                }
                 myConn.Open();
                 myReader = SelectCommand.ExecuteReader();
                 int count = 0;

@@ -78,8 +78,12 @@
             // 
             // cmbType
             // 
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbType.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "student",
+            "admin"});
             this.cmbType.Location = new System.Drawing.Point(107, 280);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(150, 26);
