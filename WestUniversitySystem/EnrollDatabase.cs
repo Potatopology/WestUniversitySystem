@@ -88,5 +88,28 @@ namespace WestUniversitySystem
             }
             return usercode;
         }
+
+        private string LoadSubjects(string usercode)
+        {
+            string name = null;
+            using (MySqlConnection myConn = new MySqlConnection(connection))
+            {
+                myConn.Open();
+                string query = "SELECT name FROM user WHERE Username = '" + usercode + "';";
+                using (MySqlCommand command = new MySqlCommand(query, myConn))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            name = reader.GetString(0);
+                        }
+                    }
+                }
+            }
+
+            return name;
+        }
+
     }
 }
