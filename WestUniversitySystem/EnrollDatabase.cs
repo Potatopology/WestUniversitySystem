@@ -53,5 +53,40 @@ namespace WestUniversitySystem
             }
             return isFound;
         }
+
+        //TODO: create name to replace username
+        public static string GetName(string usercode, string password)
+        {
+            string name = "";
+            MySqlConnection myConn = new MySqlConnection();
+            MySqlDataReader myReader = null;
+            try
+            {
+                myConn = new MySqlConnection(connection);
+                MySqlCommand SelectCommand = new MySqlCommand("Select * from enroldb.user where Username='" + usercode + "' And Password ='" + password + "';", myConn);
+                
+                myConn.Open();
+                myReader = SelectCommand.ExecuteReader();
+                int count = 0;
+                while (myReader.Read())
+                {
+                    count = count + 1;
+                }
+                if (count == 1)
+                {
+                    name = usercode;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                myConn.Close();
+                myReader.Close();
+            }
+            return usercode;
+        }
     }
 }

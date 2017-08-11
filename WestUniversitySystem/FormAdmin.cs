@@ -26,7 +26,7 @@ namespace WestUniversitySystem
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
-
+            lblName.Text = Nm;
         }
 
         private void btnAccount_Click(object sender, EventArgs e)

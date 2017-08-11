@@ -113,9 +113,39 @@ namespace WestUniversitySystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Contacts_64_white {
+            get {
+                object obj = ResourceManager.GetObject("icons8-Contacts-64-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Edit_64_white {
+            get {
+                object obj = ResourceManager.GetObject("icons8-Edit-64-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Exit_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-Exit-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Exit_64_white {
+            get {
+                object obj = ResourceManager.GetObject("icons8-Exit-64-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +176,16 @@ namespace WestUniversitySystem.Properties {
         internal static System.Drawing.Bitmap icons8_Search_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-Search-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Search_64_white {
+            get {
+                object obj = ResourceManager.GetObject("icons8-Search-64-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

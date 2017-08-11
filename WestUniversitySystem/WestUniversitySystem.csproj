@@ -90,6 +90,9 @@
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFee.resx">
+      <DependentUpon>FormFee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +157,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-Contacts-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Contacts-64-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Edit-64-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Exit-64-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-Search-64-white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
