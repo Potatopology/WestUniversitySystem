@@ -158,7 +158,7 @@ namespace WestUniversitySystem
             }
         }
 
-        private void Update()
+        public void Update()
         {
             string query = "UPDATE fees SET tuition_major = @Major, tuition_minor = @Minor, misc_1st = @Misc1,"
                 + " misc_2nd = @Misc2, misc_3rd = @Misc3, misc_4th = @Misc4,"

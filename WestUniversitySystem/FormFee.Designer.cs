@@ -235,6 +235,7 @@
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "UPDATE CHANGES";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label7
             // 
