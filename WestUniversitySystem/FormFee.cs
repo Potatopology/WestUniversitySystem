@@ -12,6 +12,8 @@ namespace WestUniversitySystem
 {
     public partial class FormFee : Form
     {
+        Fee fee = null;
+
         public FormFee()
         {
             InitializeComponent();
@@ -19,8 +21,8 @@ namespace WestUniversitySystem
 
         private void FormFee_Load(object sender, EventArgs e)
         {
-            Fee fee = new Fee();
-            txtOrig.Text = fee.ToString();
+            fee = new Fee();
+            txtOrig.Text = "Original Values\n" + fee.ToString();
         }
     }
 }

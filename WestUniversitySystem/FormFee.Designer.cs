@@ -170,6 +170,7 @@
             // 
             this.txtOrig.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtOrig.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOrig.Enabled = false;
             this.txtOrig.Location = new System.Drawing.Point(39, 88);
             this.txtOrig.Name = "txtOrig";
             this.txtOrig.Size = new System.Drawing.Size(284, 270);

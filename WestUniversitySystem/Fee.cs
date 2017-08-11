@@ -160,7 +160,7 @@ namespace WestUniversitySystem
 
         private void Update()
         {
-            string query = "UPDATE Fee SET tuition_major = @Major, tuition_minor = @Minor, misc_1st = @Misc1,"
+            string query = "UPDATE fees SET tuition_major = @Major, tuition_minor = @Minor, misc_1st = @Misc1,"
                 + " misc_2nd = @Misc2, misc_3rd = @Misc3, misc_4th = @Misc4,"
                 + " lab = @Lab, graduation = @Grad, discount = @Disc"
                 + " where id = 1;";
@@ -200,7 +200,7 @@ namespace WestUniversitySystem
                 using (MySqlConnection myConn = new MySqlConnection(connection))
                 {
                     myConn.Open();
-                    string query = "SELECT * FROM fee WHERE id = 1;";
+                    string query = "SELECT * FROM fees WHERE id = 1;";
                     using (MySqlCommand command = new MySqlCommand(query, myConn))
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
@@ -227,7 +227,18 @@ namespace WestUniversitySystem
             }
         }
         
-
+        public override string ToString()
+        {
+            return "Major: " + this.TuitionMajor.ToString() + "\n"
+                + "Minor: " + this.TuitionMinor.ToString() + "\n"
+                + "1st: " + this.Misc1st.ToString() + "\n"
+                + "2nd: " + this.Misc2nd.ToString() + "\n"
+                + "3rd: " + this.Misc3rd.ToString() + "\n"
+                + "4th: " + this.Misc4th.ToString() + "\n"
+                + "Lab: " + this.Lab.ToString() + "\n"
+                + "Graduation: " + this.Graduation.ToString() + "\n"
+                + "Discount: " + this.Discount.ToString();
+        }
 
 
 
