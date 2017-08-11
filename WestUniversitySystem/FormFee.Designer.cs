@@ -75,7 +75,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(70, 20);
+            this.lblName.Location = new System.Drawing.Point(60, 19);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(69, 20);
             this.lblName.TabIndex = 3;
@@ -102,6 +102,7 @@
             this.btnLogout.Size = new System.Drawing.Size(30, 30);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // txtMajor
             // 
@@ -229,7 +230,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(487, 393);
+            this.btnUpdate.Location = new System.Drawing.Point(519, 381);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(174, 36);
             this.btnUpdate.TabIndex = 17;

@@ -12,6 +12,13 @@ namespace WestUniversitySystem
 {
     public partial class FormFee : Form
     {
+        private string Nm = "";
+        public string Passvalue
+        {
+            get { return Nm; }
+            set { Nm = value; }
+        }
+
         Fee fee = null;
 
         public FormFee()
@@ -21,6 +28,7 @@ namespace WestUniversitySystem
 
         private void FormFee_Load(object sender, EventArgs e)
         {
+            lblName.Text = Nm;
             fee = new Fee();
             txtOrig.Text = "Original Values\n" + fee.ToString();
         }
@@ -29,6 +37,14 @@ namespace WestUniversitySystem
         {
             UpdateFees();
             txtOrig.Text = "Original Values\n" + fee.ToString();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            FormAdmin form = new FormAdmin();
+            form.Passvalue = Nm;
+            form.Show();
+            this.Close();
         }
 
         private void UpdateFees()
@@ -52,7 +68,6 @@ namespace WestUniversitySystem
             }
         }
 
-
-
+        
     }
 }

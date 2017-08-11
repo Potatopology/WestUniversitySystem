@@ -12,7 +12,7 @@ namespace WestUniversitySystem
 {
     public partial class FormAdmin : Form
     {
-        private string Nm;
+        private string Nm = "";
         public string Passvalue
         {
             get { return Nm; }
@@ -46,6 +46,7 @@ namespace WestUniversitySystem
         private void btnFee_Click(object sender, EventArgs e)
         {
             FormFee form = new FormFee();
+            form.Passvalue = Nm;
             form.Show();
             this.Close();
         }
