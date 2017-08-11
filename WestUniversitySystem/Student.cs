@@ -14,12 +14,13 @@ namespace WestUniversitySystem
         private int sn;
         private string password;
         private DateTime entryDate;
-        private string firstName;
-        private string middleName;
-        private string lastName;
         private int level;
         private string status;
+        private string course;
         private string major;
+        private string lastName;
+        private string firstName;
+        private string middleName;
         private string address;
         private string sex;
         private DateTime bday;
@@ -30,24 +31,30 @@ namespace WestUniversitySystem
 
         static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
-        public Student(int sn, string password, DateTime entryDate, string firstName, string middleName, string lastName, int level, string status, string major, string address, string sex, DateTime bday, string bplace, string citizenship, string religion, string contact)
+        public Student()
         {
-            this.sn = sn;
-            this.password = password;
-            this.entryDate = entryDate;
-            this.firstName = firstName;
-            this.middleName = middleName;
-            this.lastName = lastName;
-            this.level = level;
-            this.status = status;
-            this.major = major;
-            this.address = address;
-            this.sex = sex;
-            this.bday = bday;
-            this.bplace = bplace;
-            this.citizenship = citizenship;
-            this.religion = religion;
-            this.contact = contact;
+
+        }
+
+        public Student(int sn, string password, DateTime entryDate, int level, string status, string course, string major, string lastName, string firstName, string middleName, string address, string sex, DateTime bday, string bplace, string citizenship, string religion, string contact)
+        {
+            this.Sn = sn;
+            this.Password = password;
+            this.EntryDate = entryDate;
+            this.Level = level;
+            this.Status = status;
+            this.Course = course;
+            this.Major = major;
+            this.LastName = lastName;
+            this.FirstName = firstName;
+            this.MiddleName = middleName;
+            this.Address = address;
+            this.Sex = sex;
+            this.Bday = bday;
+            this.Bplace = bplace;
+            this.Citizenship = citizenship;
+            this.Religion = religion;
+            this.Contact = contact;
         }
 
         public int Sn
@@ -89,45 +96,6 @@ namespace WestUniversitySystem
             }
         }
 
-        public string FirstName
-        {
-            get
-            {
-                return firstName;
-            }
-
-            set
-            {
-                firstName = value;
-            }
-        }
-
-        public string MiddleName
-        {
-            get
-            {
-                return middleName;
-            }
-
-            set
-            {
-                middleName = value;
-            }
-        }
-
-        public string LastName
-        {
-            get
-            {
-                return lastName;
-            }
-
-            set
-            {
-                lastName = value;
-            }
-        }
-
         public int Level
         {
             get
@@ -154,6 +122,19 @@ namespace WestUniversitySystem
             }
         }
 
+        public string Course
+        {
+            get
+            {
+                return course;
+            }
+
+            set
+            {
+                course = value;
+            }
+        }
+
         public string Major
         {
             get
@@ -164,6 +145,45 @@ namespace WestUniversitySystem
             set
             {
                 major = value;
+            }
+        }
+
+        public string LastName
+        {
+            get
+            {
+                return lastName;
+            }
+
+            set
+            {
+                lastName = value;
+            }
+        }
+
+        public string FirstName
+        {
+            get
+            {
+                return firstName;
+            }
+
+            set
+            {
+                firstName = value;
+            }
+        }
+
+        public string MiddleName
+        {
+            get
+            {
+                return middleName;
+            }
+
+            set
+            {
+                middleName = value;
             }
         }
 
@@ -258,32 +278,46 @@ namespace WestUniversitySystem
             }
         }
 
+        
+
         public void Insert()
         {
-            string query = "UPDATE fees SET tuition_major = @Major, tuition_minor = @Minor, misc_1st = @Misc1,"
-                + " misc_2nd = @Misc2, misc_3rd = @Misc3, misc_4th = @Misc4,"
-                + " lab = @Lab, graduation = @Grad, discount = @Disc"
-                + " where id = 1;";
+            string query = "INSERT INTO student_info (SN, Password, EntryDate, Level, Status,"
+                + " CourseCode, Major, LastName, FirstName, MiddleName,"
+                + " Address, Sex, BirthDate, BirthPlace, Citizenship, Religion, ContactNo)"
+                + " VALUES"
+                + " (@SN,@Password,@EntryDate,@Level,@Status,@CourseCode,"
+                + " @Major,@LastName,@FirstName,@MiddleName,@Address,@Sex,"
+                + " @BirthDate,@BirthPlace,@Citizenship,@Religion,@ContactNo)"
+                + ");";
 
             try
             {
                 using (MySqlConnection myConn = new MySqlConnection(connection))
                 using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
                 {
-                    //myCommand.Parameters.AddWithValue("@Major", this.TuitionMajor.ToString());
-                    //myCommand.Parameters.AddWithValue("@Minor", this.TuitionMinor.ToString());
-                    //myCommand.Parameters.AddWithValue("@Misc1", this.Misc1st.ToString());
-                    //myCommand.Parameters.AddWithValue("@Misc2", this.Misc2nd.ToString());
-                    //myCommand.Parameters.AddWithValue("@Misc3", this.Misc3rd.ToString());
-                    //myCommand.Parameters.AddWithValue("@Misc4", this.Misc4th.ToString());
-                    //myCommand.Parameters.AddWithValue("@Lab", this.Lab.ToString());
-                    //myCommand.Parameters.AddWithValue("@Grad", this.Graduation.ToString());
-                    //myCommand.Parameters.AddWithValue("@Disc", this.Discount.ToString());
+                    myCommand.Parameters.AddWithValue("@SN", this.Sn.ToString());
+                    myCommand.Parameters.AddWithValue("@Password", this.Password.ToString());
+                    myCommand.Parameters.AddWithValue("@EntryDate", this.EntryDate.ToString());
+                    myCommand.Parameters.AddWithValue("@Level", this.Level.ToString());
+                    myCommand.Parameters.AddWithValue("@Status", this.Status.ToString());
+                    myCommand.Parameters.AddWithValue("@CourseCode", this.Course.ToString());
+                    myCommand.Parameters.AddWithValue("@Major", this.Major.ToString());
+                    myCommand.Parameters.AddWithValue("@LastName", this.LastName.ToString());
+                    myCommand.Parameters.AddWithValue("@FirstName", this.FirstName.ToString());
+                    myCommand.Parameters.AddWithValue("@MiddleName", this.MiddleName.ToString());
+                    myCommand.Parameters.AddWithValue("@Address", this.Address.ToString());
+                    myCommand.Parameters.AddWithValue("@Sex", this.Sex.ToString());
+                    myCommand.Parameters.AddWithValue("@BirthDate", this.Bday.ToString());
+                    myCommand.Parameters.AddWithValue("@BirthPlace", this.Bplace.ToString());
+                    myCommand.Parameters.AddWithValue("@Citizenship", this.Citizenship.ToString());
+                    myCommand.Parameters.AddWithValue("@Religion", this.Religion.ToString());
+                    myCommand.Parameters.AddWithValue("@ContactNo", this.Contact.ToString());
 
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Completed updating fees", "Successful");
+                    MessageBox.Show("Student account registered", "Successful");
                 }
             }
             catch (Exception e)
@@ -293,6 +327,26 @@ namespace WestUniversitySystem
 
         }
 
+        public override string ToString()
+        {
+            return "SN: " + this.Sn.ToString() + "\n"
+                + "Password: " + this.Password.ToString() + "\n"
+                + "EntryDate: " + this.EntryDate.ToString() + "\n"
+                + "Level: " + this.Level.ToString() + "\n"
+                + "Status: " + this.Status.ToString() + "\n"
+                + "CourseCode: " + this.Course.ToString() + "\n"
+                + "Major: " + this.Major.ToString() + "\n"
+                + "LastName: " + this.LastName.ToString() + "\n"
+                + "FirstName: " + this.FirstName.ToString() + "\n"
+                + "MiddleName: " + this.MiddleName.ToString() + "\n"
+                + "Address: " + this.Address.ToString() + "\n"
+                + "Sex: " + this.Sex.ToString() + "\n"
+                + "BirthDate: " + this.Bday.ToString() + "\n"
+                + "BirthPlace: " + this.Bplace.ToString() + "\n"
+                + "Citizenship: " + this.Citizenship.ToString() + "\n"
+                + "Religion: " + this.Religion.ToString() + "\n"
+                + "ContactNo: " + this.Contact.ToString();
+        }
 
     }
 }
