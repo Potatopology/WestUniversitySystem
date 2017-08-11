@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Configuration;
+using System.Windows.Forms;
 
 namespace WestUniversitySystem
 {
@@ -152,9 +153,45 @@ namespace WestUniversitySystem
             }
         }
 
+        private void Update()
+        {
+            string query = "UPDATE Fee SET tuition_major = @Major, tuition_minor = @Minor, misc_1st = @Misc1,"
+                + " misc_2nd = @Misc2, misc_3rd = @Misc3, misc_4th = @Misc4,"
+                + " lab = @Lab, graduation = @Grad, discount = @Disc"
+                + " where id = 1;";
 
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
+                {
+                    myCommand.Parameters.AddWithValue("@Major", this.TuitionMajor.ToString());
+                    myCommand.Parameters.AddWithValue("@Minor", this.TuitionMinor.ToString());
+                    myCommand.Parameters.AddWithValue("@Misc1", this.Misc1st.ToString());
+                    myCommand.Parameters.AddWithValue("@Misc2", this.Misc2nd.ToString());
+                    myCommand.Parameters.AddWithValue("@Misc3", this.Misc3rd.ToString());
+                    myCommand.Parameters.AddWithValue("@Misc4", this.Misc4th.ToString());
+                    myCommand.Parameters.AddWithValue("@Lab", this.Lab.ToString());
+                    myCommand.Parameters.AddWithValue("@Grad", this.Graduation.ToString());
+                    myCommand.Parameters.AddWithValue("@Disc", this.Discount.ToString());
+                    
+                    myCommand.CommandTimeout = 60;
+                    myConn.Open();
+                    int affectedRows = myCommand.ExecuteNonQuery();
+                    MessageBox.Show("Completed updating fees", "Successful");
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
+        }
 
+        public Fee()
+        {
 
+        }
 
 
 

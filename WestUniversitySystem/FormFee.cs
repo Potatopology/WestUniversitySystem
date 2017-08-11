@@ -16,5 +16,10 @@ namespace WestUniversitySystem
         {
             InitializeComponent();
         }
+
+        private void FormFee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
