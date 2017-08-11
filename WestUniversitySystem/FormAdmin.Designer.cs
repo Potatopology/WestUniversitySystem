@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.label1 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAccount = new System.Windows.Forms.Button();
-            this.btnSubject = new System.Windows.Forms.Button();
-            this.btnFee = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnFee = new System.Windows.Forms.Button();
+            this.btnSubject = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnAccount = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,75 +54,19 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Welcome";
             // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lblName.Location = new System.Drawing.Point(146, 56);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(69, 20);
-            this.lblName.TabIndex = 15;
-            this.lblName.Text = "<name>";
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnFee);
             this.panel1.Controls.Add(this.btnSubject);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnAccount);
-            this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(360, 445);
             this.panel1.TabIndex = 16;
-            // 
-            // btnAccount
-            // 
-            this.btnAccount.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.ForeColor = System.Drawing.Color.White;
-            this.btnAccount.Location = new System.Drawing.Point(60, 240);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(240, 36);
-            this.btnAccount.TabIndex = 16;
-            this.btnAccount.Text = "CREATE STUDENT ACCOUNT";
-            this.btnAccount.UseVisualStyleBackColor = false;
-            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
-            // 
-            // btnSubject
-            // 
-            this.btnSubject.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSubject.FlatAppearance.BorderSize = 0;
-            this.btnSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubject.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubject.ForeColor = System.Drawing.Color.White;
-            this.btnSubject.Location = new System.Drawing.Point(60, 282);
-            this.btnSubject.Name = "btnSubject";
-            this.btnSubject.Size = new System.Drawing.Size(240, 36);
-            this.btnSubject.TabIndex = 18;
-            this.btnSubject.Text = "EDIT SUBJECT OFFERING";
-            this.btnSubject.UseVisualStyleBackColor = false;
-            this.btnSubject.Click += new System.EventHandler(this.btnSubject_Click);
-            // 
-            // btnFee
-            // 
-            this.btnFee.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnFee.FlatAppearance.BorderSize = 0;
-            this.btnFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFee.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFee.ForeColor = System.Drawing.Color.White;
-            this.btnFee.Location = new System.Drawing.Point(60, 324);
-            this.btnFee.Name = "btnFee";
-            this.btnFee.Size = new System.Drawing.Size(240, 36);
-            this.btnFee.TabIndex = 19;
-            this.btnFee.Text = "CHANGE FEES";
-            this.btnFee.UseVisualStyleBackColor = false;
-            this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
             // 
             // btnLogout
             // 
@@ -139,6 +83,36 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // btnFee
+            // 
+            this.btnFee.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnFee.FlatAppearance.BorderSize = 0;
+            this.btnFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFee.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFee.ForeColor = System.Drawing.Color.White;
+            this.btnFee.Location = new System.Drawing.Point(60, 324);
+            this.btnFee.Name = "btnFee";
+            this.btnFee.Size = new System.Drawing.Size(240, 36);
+            this.btnFee.TabIndex = 19;
+            this.btnFee.Text = "CHANGE FEES";
+            this.btnFee.UseVisualStyleBackColor = false;
+            this.btnFee.Click += new System.EventHandler(this.btnFee_Click);
+            // 
+            // btnSubject
+            // 
+            this.btnSubject.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSubject.FlatAppearance.BorderSize = 0;
+            this.btnSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubject.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubject.ForeColor = System.Drawing.Color.White;
+            this.btnSubject.Location = new System.Drawing.Point(60, 282);
+            this.btnSubject.Name = "btnSubject";
+            this.btnSubject.Size = new System.Drawing.Size(240, 36);
+            this.btnSubject.TabIndex = 18;
+            this.btnSubject.Text = "EDIT SUBJECT OFFERING";
+            this.btnSubject.UseVisualStyleBackColor = false;
+            this.btnSubject.Click += new System.EventHandler(this.btnSubject_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::WestUniversitySystem.Properties.Resources.icons8_Contacts_512__1_;
@@ -149,6 +123,21 @@
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
+            // btnAccount
+            // 
+            this.btnAccount.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAccount.FlatAppearance.BorderSize = 0;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.ForeColor = System.Drawing.Color.White;
+            this.btnAccount.Location = new System.Drawing.Point(60, 240);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(240, 36);
+            this.btnAccount.TabIndex = 16;
+            this.btnAccount.Text = "CREATE STUDENT ACCOUNT";
+            this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WestUniversitySystem.Properties.Resources.adminPic;
@@ -158,6 +147,18 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName.Enabled = false;
+            this.txtName.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(60, 61);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(240, 22);
+            this.txtName.TabIndex = 21;
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormAdmin
             // 
@@ -186,12 +187,12 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnFee;
         private System.Windows.Forms.Button btnSubject;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnAccount;
+        private System.Windows.Forms.TextBox txtName;
     }
 }

@@ -35,7 +35,7 @@ namespace WestUniversitySystem
                 if (cmbType.Text == "admin")
                 {
                     FormAdmin form = new FormAdmin();
-                    form.Passvalue = EnrollDatabase.GetName(txtUser.Text, txtPassword.Text);
+                    form.Passvalue = EnrollDatabase.GetName(txtUser.Text);
                     form.Show();
                     this.Hide();
                 }
