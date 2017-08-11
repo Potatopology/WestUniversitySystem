@@ -36,6 +36,27 @@ namespace WestUniversitySystem
 
         }
 
+        public Student(string password, DateTime entryDate, int level, string status, string course, string major, string lastName, string firstName, string middleName, string address, string sex, DateTime bday, string bplace, string citizenship, string religion, string contact)
+        {
+            this.Sn = "";
+            this.Password = password;
+            this.EntryDate = entryDate;
+            this.Level = level;
+            this.Status = status;
+            this.Course = course;
+            this.Major = major;
+            this.LastName = lastName;
+            this.FirstName = firstName;
+            this.MiddleName = middleName;
+            this.Address = address;
+            this.Sex = sex;
+            this.Bday = bday;
+            this.Bplace = bplace;
+            this.Citizenship = citizenship;
+            this.Religion = religion;
+            this.Contact = contact;
+        }
+
         public Student(int sn, string password, DateTime entryDate, int level, string status, string course, string major, string lastName, string firstName, string middleName, string address, string sex, DateTime bday, string bplace, string citizenship, string religion, string contact)
         {
             this.Sn = sn;
@@ -282,11 +303,11 @@ namespace WestUniversitySystem
 
         public void Insert()
         {
-            string query = "INSERT INTO student_info (SN, Password, EntryDate, Level, Status,"
+            string query = "INSERT INTO student_info (Password, EntryDate, Level, Status,"
                 + " CourseCode, Major, LastName, FirstName, MiddleName,"
                 + " Address, Sex, BirthDate, BirthPlace, Citizenship, Religion, ContactNo)"
                 + " VALUES"
-                + " (@SN,@Password,@EntryDate,@Level,@Status,@CourseCode,"
+                + " (@Password,@EntryDate,@Level,@Status,@CourseCode,"
                 + " @Major,@LastName,@FirstName,@MiddleName,@Address,@Sex,"
                 + " @BirthDate,@BirthPlace,@Citizenship,@Religion,@ContactNo)"
                 + ");";
@@ -296,7 +317,7 @@ namespace WestUniversitySystem
                 using (MySqlConnection myConn = new MySqlConnection(connection))
                 using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
                 {
-                    myCommand.Parameters.AddWithValue("@SN", this.Sn.ToString());
+                    //myCommand.Parameters.AddWithValue("@SN", this.Sn.ToString());
                     myCommand.Parameters.AddWithValue("@Password", this.Password.ToString());
                     myCommand.Parameters.AddWithValue("@EntryDate", this.EntryDate.ToString());
                     myCommand.Parameters.AddWithValue("@Level", this.Level.ToString());

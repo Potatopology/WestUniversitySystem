@@ -338,7 +338,14 @@
             // 
             // cmbStatus
             // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "New Student",
+            "Old Student",
+            "Returnee",
+            "Shifter",
+            "Transferee"});
             this.cmbStatus.Location = new System.Drawing.Point(131, 227);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(200, 26);
@@ -346,7 +353,11 @@
             // 
             // cmbSex
             // 
+            this.cmbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSex.FormattingEnabled = true;
+            this.cmbSex.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
             this.cmbSex.Location = new System.Drawing.Point(131, 352);
             this.cmbSex.Name = "cmbSex";
             this.cmbSex.Size = new System.Drawing.Size(200, 26);
