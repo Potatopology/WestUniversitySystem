@@ -16,5 +16,10 @@ namespace WestUniversitySystem
         {
             InitializeComponent();
         }
+
+        private void FormStudentAccount_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

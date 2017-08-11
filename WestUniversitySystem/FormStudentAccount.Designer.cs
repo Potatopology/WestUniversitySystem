@@ -47,28 +47,28 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txtFirst = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtMajor = new System.Windows.Forms.TextBox();
+            this.txtCourse = new System.Windows.Forms.TextBox();
+            this.txtLevel = new System.Windows.Forms.TextBox();
+            this.txtLast = new System.Windows.Forms.TextBox();
+            this.txtMiddle = new System.Windows.Forms.TextBox();
+            this.txtBplace = new System.Windows.Forms.TextBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.cmbSex = new System.Windows.Forms.ComboBox();
+            this.dtpBday = new System.Windows.Forms.DateTimePicker();
+            this.txtCitizen = new System.Windows.Forms.TextBox();
+            this.txtReligion = new System.Windows.Forms.TextBox();
+            this.txtContact = new System.Windows.Forms.TextBox();
+            this.txtFormer = new System.Windows.Forms.TextBox();
+            this.txtTertiary = new System.Windows.Forms.TextBox();
+            this.txtTertiaryYear = new System.Windows.Forms.TextBox();
+            this.txtFormerYear = new System.Windows.Forms.TextBox();
+            this.txtPrimary = new System.Windows.Forms.TextBox();
+            this.txtSecondary = new System.Windows.Forms.TextBox();
+            this.txtPrimaryYear = new System.Windows.Forms.TextBox();
+            this.txtSecondaryYear = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -76,13 +76,13 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.chkBirth = new System.Windows.Forms.CheckBox();
+            this.chkGmc = new System.Windows.Forms.CheckBox();
+            this.chkTor = new System.Windows.Forms.CheckBox();
+            this.chk137 = new System.Windows.Forms.CheckBox();
+            this.chkTransfer = new System.Windows.Forms.CheckBox();
+            this.chkNsat = new System.Windows.Forms.CheckBox();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -90,15 +90,15 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.txtDadName = new System.Windows.Forms.TextBox();
+            this.txtDadJob = new System.Windows.Forms.TextBox();
+            this.txtDadNum = new System.Windows.Forms.TextBox();
+            this.txtGuarNum = new System.Windows.Forms.TextBox();
+            this.txtGuarName = new System.Windows.Forms.TextBox();
+            this.txtMomNum = new System.Windows.Forms.TextBox();
+            this.txtMomJob = new System.Windows.Forms.TextBox();
+            this.txtMomName = new System.Windows.Forms.TextBox();
+            this.txtGuarJob = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -275,161 +275,161 @@
             this.label14.TabIndex = 15;
             this.label14.Text = "Status";
             // 
-            // textBox1
+            // txtFirst
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 25);
-            this.textBox1.TabIndex = 16;
+            this.txtFirst.Location = new System.Drawing.Point(131, 103);
+            this.txtFirst.Name = "txtFirst";
+            this.txtFirst.Size = new System.Drawing.Size(200, 25);
+            this.txtFirst.TabIndex = 16;
             // 
-            // textBox4
+            // txtAddress
             // 
-            this.textBox4.Location = new System.Drawing.Point(131, 321);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 25);
-            this.textBox4.TabIndex = 19;
+            this.txtAddress.Location = new System.Drawing.Point(131, 321);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(200, 25);
+            this.txtAddress.TabIndex = 19;
             // 
-            // textBox5
+            // txtMajor
             // 
-            this.textBox5.Location = new System.Drawing.Point(131, 290);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 25);
-            this.textBox5.TabIndex = 20;
+            this.txtMajor.Location = new System.Drawing.Point(131, 290);
+            this.txtMajor.Name = "txtMajor";
+            this.txtMajor.Size = new System.Drawing.Size(200, 25);
+            this.txtMajor.TabIndex = 20;
             // 
-            // textBox6
+            // txtCourse
             // 
-            this.textBox6.Location = new System.Drawing.Point(131, 259);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(200, 25);
-            this.textBox6.TabIndex = 21;
+            this.txtCourse.Location = new System.Drawing.Point(131, 259);
+            this.txtCourse.Name = "txtCourse";
+            this.txtCourse.Size = new System.Drawing.Size(200, 25);
+            this.txtCourse.TabIndex = 21;
             // 
-            // textBox8
+            // txtLevel
             // 
-            this.textBox8.Location = new System.Drawing.Point(131, 196);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 25);
-            this.textBox8.TabIndex = 23;
+            this.txtLevel.Location = new System.Drawing.Point(131, 196);
+            this.txtLevel.Name = "txtLevel";
+            this.txtLevel.Size = new System.Drawing.Size(200, 25);
+            this.txtLevel.TabIndex = 23;
             // 
-            // textBox9
+            // txtLast
             // 
-            this.textBox9.Location = new System.Drawing.Point(131, 165);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(200, 25);
-            this.textBox9.TabIndex = 24;
+            this.txtLast.Location = new System.Drawing.Point(131, 165);
+            this.txtLast.Name = "txtLast";
+            this.txtLast.Size = new System.Drawing.Size(200, 25);
+            this.txtLast.TabIndex = 24;
             // 
-            // textBox10
+            // txtMiddle
             // 
-            this.textBox10.Location = new System.Drawing.Point(131, 134);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(200, 25);
-            this.textBox10.TabIndex = 25;
+            this.txtMiddle.Location = new System.Drawing.Point(131, 134);
+            this.txtMiddle.Name = "txtMiddle";
+            this.txtMiddle.Size = new System.Drawing.Size(200, 25);
+            this.txtMiddle.TabIndex = 25;
             // 
-            // textBox11
+            // txtBplace
             // 
-            this.textBox11.Location = new System.Drawing.Point(131, 415);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(200, 25);
-            this.textBox11.TabIndex = 26;
+            this.txtBplace.Location = new System.Drawing.Point(131, 415);
+            this.txtBplace.Name = "txtBplace";
+            this.txtBplace.Size = new System.Drawing.Size(200, 25);
+            this.txtBplace.TabIndex = 26;
             // 
-            // comboBox1
+            // cmbStatus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 227);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 26);
-            this.comboBox1.TabIndex = 27;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(131, 227);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(200, 26);
+            this.cmbStatus.TabIndex = 27;
             // 
-            // comboBox2
+            // cmbSex
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(131, 352);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 26);
-            this.comboBox2.TabIndex = 28;
+            this.cmbSex.FormattingEnabled = true;
+            this.cmbSex.Location = new System.Drawing.Point(131, 352);
+            this.cmbSex.Name = "cmbSex";
+            this.cmbSex.Size = new System.Drawing.Size(200, 26);
+            this.cmbSex.TabIndex = 28;
             // 
-            // dateTimePicker1
+            // dtpBday
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(131, 384);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePicker1.TabIndex = 29;
+            this.dtpBday.Location = new System.Drawing.Point(131, 384);
+            this.dtpBday.Name = "dtpBday";
+            this.dtpBday.Size = new System.Drawing.Size(200, 25);
+            this.dtpBday.TabIndex = 29;
             // 
-            // textBox2
+            // txtCitizen
             // 
-            this.textBox2.Location = new System.Drawing.Point(131, 446);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 25);
-            this.textBox2.TabIndex = 30;
+            this.txtCitizen.Location = new System.Drawing.Point(131, 446);
+            this.txtCitizen.Name = "txtCitizen";
+            this.txtCitizen.Size = new System.Drawing.Size(200, 25);
+            this.txtCitizen.TabIndex = 30;
             // 
-            // textBox3
+            // txtReligion
             // 
-            this.textBox3.Location = new System.Drawing.Point(131, 477);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 25);
-            this.textBox3.TabIndex = 31;
+            this.txtReligion.Location = new System.Drawing.Point(131, 477);
+            this.txtReligion.Name = "txtReligion";
+            this.txtReligion.Size = new System.Drawing.Size(200, 25);
+            this.txtReligion.TabIndex = 31;
             // 
-            // textBox7
+            // txtContact
             // 
-            this.textBox7.Location = new System.Drawing.Point(131, 508);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(200, 25);
-            this.textBox7.TabIndex = 32;
+            this.txtContact.Location = new System.Drawing.Point(131, 508);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(200, 25);
+            this.txtContact.TabIndex = 32;
             // 
-            // textBox12
+            // txtFormer
             // 
-            this.textBox12.Location = new System.Drawing.Point(466, 103);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(200, 25);
-            this.textBox12.TabIndex = 33;
+            this.txtFormer.Location = new System.Drawing.Point(466, 103);
+            this.txtFormer.Name = "txtFormer";
+            this.txtFormer.Size = new System.Drawing.Size(200, 25);
+            this.txtFormer.TabIndex = 33;
             // 
-            // textBox13
+            // txtTertiary
             // 
-            this.textBox13.Location = new System.Drawing.Point(466, 134);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(200, 25);
-            this.textBox13.TabIndex = 34;
+            this.txtTertiary.Location = new System.Drawing.Point(466, 134);
+            this.txtTertiary.Name = "txtTertiary";
+            this.txtTertiary.Size = new System.Drawing.Size(200, 25);
+            this.txtTertiary.TabIndex = 34;
             // 
-            // textBox14
+            // txtTertiaryYear
             // 
-            this.textBox14.Location = new System.Drawing.Point(680, 134);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(122, 25);
-            this.textBox14.TabIndex = 36;
+            this.txtTertiaryYear.Location = new System.Drawing.Point(680, 134);
+            this.txtTertiaryYear.Name = "txtTertiaryYear";
+            this.txtTertiaryYear.Size = new System.Drawing.Size(122, 25);
+            this.txtTertiaryYear.TabIndex = 36;
             // 
-            // textBox15
+            // txtFormerYear
             // 
-            this.textBox15.Location = new System.Drawing.Point(680, 103);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(122, 25);
-            this.textBox15.TabIndex = 35;
+            this.txtFormerYear.Location = new System.Drawing.Point(680, 103);
+            this.txtFormerYear.Name = "txtFormerYear";
+            this.txtFormerYear.Size = new System.Drawing.Size(122, 25);
+            this.txtFormerYear.TabIndex = 35;
             // 
-            // textBox16
+            // txtPrimary
             // 
-            this.textBox16.Location = new System.Drawing.Point(466, 196);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(200, 25);
-            this.textBox16.TabIndex = 38;
+            this.txtPrimary.Location = new System.Drawing.Point(466, 196);
+            this.txtPrimary.Name = "txtPrimary";
+            this.txtPrimary.Size = new System.Drawing.Size(200, 25);
+            this.txtPrimary.TabIndex = 38;
             // 
-            // textBox17
+            // txtSecondary
             // 
-            this.textBox17.Location = new System.Drawing.Point(466, 165);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(200, 25);
-            this.textBox17.TabIndex = 37;
+            this.txtSecondary.Location = new System.Drawing.Point(466, 165);
+            this.txtSecondary.Name = "txtSecondary";
+            this.txtSecondary.Size = new System.Drawing.Size(200, 25);
+            this.txtSecondary.TabIndex = 37;
             // 
-            // textBox18
+            // txtPrimaryYear
             // 
-            this.textBox18.Location = new System.Drawing.Point(680, 196);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(122, 25);
-            this.textBox18.TabIndex = 40;
+            this.txtPrimaryYear.Location = new System.Drawing.Point(680, 196);
+            this.txtPrimaryYear.Name = "txtPrimaryYear";
+            this.txtPrimaryYear.Size = new System.Drawing.Size(122, 25);
+            this.txtPrimaryYear.TabIndex = 40;
             // 
-            // textBox19
+            // txtSecondaryYear
             // 
-            this.textBox19.Location = new System.Drawing.Point(680, 165);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(122, 25);
-            this.textBox19.TabIndex = 39;
+            this.txtSecondaryYear.Location = new System.Drawing.Point(680, 165);
+            this.txtSecondaryYear.Name = "txtSecondaryYear";
+            this.txtSecondaryYear.Size = new System.Drawing.Size(122, 25);
+            this.txtSecondaryYear.TabIndex = 39;
             // 
             // label15
             // 
@@ -488,12 +488,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox6);
-            this.groupBox1.Controls.Add(this.checkBox5);
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.chkBirth);
+            this.groupBox1.Controls.Add(this.chkGmc);
+            this.groupBox1.Controls.Add(this.chkTor);
+            this.groupBox1.Controls.Add(this.chk137);
+            this.groupBox1.Controls.Add(this.chkTransfer);
+            this.groupBox1.Controls.Add(this.chkNsat);
             this.groupBox1.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(358, 228);
             this.groupBox1.Name = "groupBox1";
@@ -502,85 +502,85 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Requirements";
             // 
-            // checkBox1
+            // chkBirth
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(49, 33);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(100, 22);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "NSAT Rating";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkBirth.AutoSize = true;
+            this.chkBirth.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkBirth.Location = new System.Drawing.Point(228, 95);
+            this.chkBirth.Name = "chkBirth";
+            this.chkBirth.Size = new System.Drawing.Size(116, 22);
+            this.chkBirth.TabIndex = 5;
+            this.chkBirth.Text = "Birth Certifcate";
+            this.chkBirth.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkGmc
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(49, 95);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(140, 22);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Transfer Credential";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkGmc.AutoSize = true;
+            this.chkGmc.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGmc.Location = new System.Drawing.Point(228, 64);
+            this.chkGmc.Name = "chkGmc";
+            this.chkGmc.Size = new System.Drawing.Size(201, 22);
+            this.chkGmc.TabIndex = 4;
+            this.chkGmc.Text = "GMC - Good Moral Certificate";
+            this.chkGmc.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkTor
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(49, 64);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(83, 22);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Form 137";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkTor.AutoSize = true;
+            this.chkTor.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTor.Location = new System.Drawing.Point(228, 33);
+            this.chkTor.Name = "chkTor";
+            this.chkTor.Size = new System.Drawing.Size(188, 22);
+            this.chkTor.TabIndex = 3;
+            this.chkTor.Text = "TOR - Transcript of Records";
+            this.chkTor.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chk137
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(228, 33);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(188, 22);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "TOR - Transcript of Records";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chk137.AutoSize = true;
+            this.chk137.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk137.Location = new System.Drawing.Point(49, 64);
+            this.chk137.Name = "chk137";
+            this.chk137.Size = new System.Drawing.Size(83, 22);
+            this.chk137.TabIndex = 2;
+            this.chk137.Text = "Form 137";
+            this.chk137.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // chkTransfer
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(228, 64);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(201, 22);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "GMC - Good Moral Certificate";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkTransfer.AutoSize = true;
+            this.chkTransfer.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTransfer.Location = new System.Drawing.Point(49, 95);
+            this.chkTransfer.Name = "chkTransfer";
+            this.chkTransfer.Size = new System.Drawing.Size(140, 22);
+            this.chkTransfer.TabIndex = 1;
+            this.chkTransfer.Text = "Transfer Credential";
+            this.chkTransfer.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // chkNsat
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(228, 95);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(116, 22);
-            this.checkBox6.TabIndex = 5;
-            this.checkBox6.Text = "Birth Certifcate";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chkNsat.AutoSize = true;
+            this.chkNsat.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkNsat.Location = new System.Drawing.Point(49, 33);
+            this.chkNsat.Name = "chkNsat";
+            this.chkNsat.Size = new System.Drawing.Size(100, 22);
+            this.chkNsat.TabIndex = 0;
+            this.chkNsat.Text = "NSAT Rating";
+            this.chkNsat.UseVisualStyleBackColor = true;
             // 
-            // btnUpdate
+            // btnCreate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(325, 555);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(174, 36);
-            this.btnUpdate.TabIndex = 48;
-            this.btnUpdate.Text = "CREATE ACCOUNT";
-            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnCreate.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCreate.FlatAppearance.BorderSize = 0;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Location = new System.Drawing.Point(325, 555);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(174, 36);
+            this.btnCreate.TabIndex = 48;
+            this.btnCreate.Text = "CREATE ACCOUNT";
+            this.btnCreate.UseVisualStyleBackColor = false;
             // 
             // label21
             // 
@@ -646,68 +646,68 @@
             this.label29.TabIndex = 59;
             this.label29.Text = "Contact No.";
             // 
-            // textBox22
+            // txtDadName
             // 
-            this.textBox22.Location = new System.Drawing.Point(425, 446);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(122, 25);
-            this.textBox22.TabIndex = 60;
+            this.txtDadName.Location = new System.Drawing.Point(425, 446);
+            this.txtDadName.Name = "txtDadName";
+            this.txtDadName.Size = new System.Drawing.Size(122, 25);
+            this.txtDadName.TabIndex = 60;
             // 
-            // textBox23
+            // txtDadJob
             // 
-            this.textBox23.Location = new System.Drawing.Point(553, 446);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(122, 25);
-            this.textBox23.TabIndex = 61;
+            this.txtDadJob.Location = new System.Drawing.Point(553, 446);
+            this.txtDadJob.Name = "txtDadJob";
+            this.txtDadJob.Size = new System.Drawing.Size(122, 25);
+            this.txtDadJob.TabIndex = 61;
             // 
-            // textBox24
+            // txtDadNum
             // 
-            this.textBox24.Location = new System.Drawing.Point(681, 446);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(122, 25);
-            this.textBox24.TabIndex = 62;
+            this.txtDadNum.Location = new System.Drawing.Point(681, 446);
+            this.txtDadNum.Name = "txtDadNum";
+            this.txtDadNum.Size = new System.Drawing.Size(122, 25);
+            this.txtDadNum.TabIndex = 62;
             // 
-            // textBox25
+            // txtGuarNum
             // 
-            this.textBox25.Location = new System.Drawing.Point(681, 508);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(122, 25);
-            this.textBox25.TabIndex = 63;
+            this.txtGuarNum.Location = new System.Drawing.Point(681, 508);
+            this.txtGuarNum.Name = "txtGuarNum";
+            this.txtGuarNum.Size = new System.Drawing.Size(122, 25);
+            this.txtGuarNum.TabIndex = 63;
             // 
-            // textBox26
+            // txtGuarName
             // 
-            this.textBox26.Location = new System.Drawing.Point(425, 508);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(122, 25);
-            this.textBox26.TabIndex = 64;
+            this.txtGuarName.Location = new System.Drawing.Point(425, 508);
+            this.txtGuarName.Name = "txtGuarName";
+            this.txtGuarName.Size = new System.Drawing.Size(122, 25);
+            this.txtGuarName.TabIndex = 64;
             // 
-            // textBox27
+            // txtMomNum
             // 
-            this.textBox27.Location = new System.Drawing.Point(681, 477);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(122, 25);
-            this.textBox27.TabIndex = 65;
+            this.txtMomNum.Location = new System.Drawing.Point(681, 477);
+            this.txtMomNum.Name = "txtMomNum";
+            this.txtMomNum.Size = new System.Drawing.Size(122, 25);
+            this.txtMomNum.TabIndex = 65;
             // 
-            // textBox28
+            // txtMomJob
             // 
-            this.textBox28.Location = new System.Drawing.Point(553, 477);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(122, 25);
-            this.textBox28.TabIndex = 66;
+            this.txtMomJob.Location = new System.Drawing.Point(553, 477);
+            this.txtMomJob.Name = "txtMomJob";
+            this.txtMomJob.Size = new System.Drawing.Size(122, 25);
+            this.txtMomJob.TabIndex = 66;
             // 
-            // textBox29
+            // txtMomName
             // 
-            this.textBox29.Location = new System.Drawing.Point(425, 477);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(122, 25);
-            this.textBox29.TabIndex = 67;
+            this.txtMomName.Location = new System.Drawing.Point(425, 477);
+            this.txtMomName.Name = "txtMomName";
+            this.txtMomName.Size = new System.Drawing.Size(122, 25);
+            this.txtMomName.TabIndex = 67;
             // 
-            // textBox30
+            // txtGuarJob
             // 
-            this.textBox30.Location = new System.Drawing.Point(553, 508);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(122, 25);
-            this.textBox30.TabIndex = 68;
+            this.txtGuarJob.Location = new System.Drawing.Point(553, 508);
+            this.txtGuarJob.Name = "txtGuarJob";
+            this.txtGuarJob.Size = new System.Drawing.Size(122, 25);
+            this.txtGuarJob.TabIndex = 68;
             // 
             // label26
             // 
@@ -726,15 +726,15 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(824, 611);
             this.Controls.Add(this.label26);
-            this.Controls.Add(this.textBox30);
-            this.Controls.Add(this.textBox29);
-            this.Controls.Add(this.textBox28);
-            this.Controls.Add(this.textBox27);
-            this.Controls.Add(this.textBox26);
-            this.Controls.Add(this.textBox25);
-            this.Controls.Add(this.textBox24);
-            this.Controls.Add(this.textBox23);
-            this.Controls.Add(this.textBox22);
+            this.Controls.Add(this.txtGuarJob);
+            this.Controls.Add(this.txtMomName);
+            this.Controls.Add(this.txtMomJob);
+            this.Controls.Add(this.txtMomNum);
+            this.Controls.Add(this.txtGuarName);
+            this.Controls.Add(this.txtGuarNum);
+            this.Controls.Add(this.txtDadNum);
+            this.Controls.Add(this.txtDadJob);
+            this.Controls.Add(this.txtDadName);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label25);
@@ -742,7 +742,7 @@
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
@@ -750,28 +750,28 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox18);
-            this.Controls.Add(this.textBox19);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox17);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPrimaryYear);
+            this.Controls.Add(this.txtSecondaryYear);
+            this.Controls.Add(this.txtPrimary);
+            this.Controls.Add(this.txtSecondary);
+            this.Controls.Add(this.txtTertiaryYear);
+            this.Controls.Add(this.txtFormerYear);
+            this.Controls.Add(this.txtTertiary);
+            this.Controls.Add(this.txtFormer);
+            this.Controls.Add(this.txtContact);
+            this.Controls.Add(this.txtReligion);
+            this.Controls.Add(this.txtCitizen);
+            this.Controls.Add(this.dtpBday);
+            this.Controls.Add(this.cmbSex);
+            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.txtBplace);
+            this.Controls.Add(this.txtMiddle);
+            this.Controls.Add(this.txtLast);
+            this.Controls.Add(this.txtLevel);
+            this.Controls.Add(this.txtCourse);
+            this.Controls.Add(this.txtMajor);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtFirst);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -793,6 +793,7 @@
             this.Name = "FormStudentAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "University of the West | Create Student Account";
+            this.Load += new System.EventHandler(this.FormStudentAccount_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -823,28 +824,28 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txtFirst;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtMajor;
+        private System.Windows.Forms.TextBox txtCourse;
+        private System.Windows.Forms.TextBox txtLevel;
+        private System.Windows.Forms.TextBox txtLast;
+        private System.Windows.Forms.TextBox txtMiddle;
+        private System.Windows.Forms.TextBox txtBplace;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.ComboBox cmbSex;
+        private System.Windows.Forms.DateTimePicker dtpBday;
+        private System.Windows.Forms.TextBox txtCitizen;
+        private System.Windows.Forms.TextBox txtReligion;
+        private System.Windows.Forms.TextBox txtContact;
+        private System.Windows.Forms.TextBox txtFormer;
+        private System.Windows.Forms.TextBox txtTertiary;
+        private System.Windows.Forms.TextBox txtTertiaryYear;
+        private System.Windows.Forms.TextBox txtFormerYear;
+        private System.Windows.Forms.TextBox txtPrimary;
+        private System.Windows.Forms.TextBox txtSecondary;
+        private System.Windows.Forms.TextBox txtPrimaryYear;
+        private System.Windows.Forms.TextBox txtSecondaryYear;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
@@ -852,13 +853,13 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.CheckBox chkBirth;
+        private System.Windows.Forms.CheckBox chkGmc;
+        private System.Windows.Forms.CheckBox chkTor;
+        private System.Windows.Forms.CheckBox chk137;
+        private System.Windows.Forms.CheckBox chkTransfer;
+        private System.Windows.Forms.CheckBox chkNsat;
+        private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -866,15 +867,15 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox txtDadName;
+        private System.Windows.Forms.TextBox txtDadJob;
+        private System.Windows.Forms.TextBox txtDadNum;
+        private System.Windows.Forms.TextBox txtGuarNum;
+        private System.Windows.Forms.TextBox txtGuarName;
+        private System.Windows.Forms.TextBox txtMomNum;
+        private System.Windows.Forms.TextBox txtMomJob;
+        private System.Windows.Forms.TextBox txtMomName;
+        private System.Windows.Forms.TextBox txtGuarJob;
         private System.Windows.Forms.Label label26;
     }
 }
