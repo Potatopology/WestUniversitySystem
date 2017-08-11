@@ -100,6 +100,10 @@
             this.txtMomName = new System.Windows.Forms.TextBox();
             this.txtGuarJob = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.txtParentAdd = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -148,6 +152,7 @@
             this.btnLogout.Size = new System.Drawing.Size(30, 30);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // label1
             // 
@@ -575,12 +580,13 @@
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(325, 555);
+            this.btnCreate.Location = new System.Drawing.Point(333, 597);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(174, 36);
             this.btnCreate.TabIndex = 48;
             this.btnCreate.Text = "CREATE ACCOUNT";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // label21
             // 
@@ -719,12 +725,48 @@
             this.label26.TabIndex = 69;
             this.label26.Text = "Personal Info";
             // 
+            // txtParentAdd
+            // 
+            this.txtParentAdd.Location = new System.Drawing.Point(425, 539);
+            this.txtParentAdd.Name = "txtParentAdd";
+            this.txtParentAdd.Size = new System.Drawing.Size(378, 25);
+            this.txtParentAdd.TabIndex = 71;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(355, 542);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(56, 18);
+            this.label27.TabIndex = 70;
+            this.label27.Text = "Address";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(131, 539);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(200, 25);
+            this.txtPassword.TabIndex = 73;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(24, 542);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(106, 18);
+            this.label30.TabIndex = 72;
+            this.label30.Text = "Temp. Password";
+            // 
             // FormStudentAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(824, 611);
+            this.ClientSize = new System.Drawing.Size(824, 660);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.txtParentAdd);
+            this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.txtGuarJob);
             this.Controls.Add(this.txtMomName);
@@ -877,5 +919,9 @@
         private System.Windows.Forms.TextBox txtMomName;
         private System.Windows.Forms.TextBox txtGuarJob;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtParentAdd;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label30;
     }
 }
