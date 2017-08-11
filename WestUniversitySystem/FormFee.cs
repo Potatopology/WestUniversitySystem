@@ -19,7 +19,8 @@ namespace WestUniversitySystem
 
         private void FormFee_Load(object sender, EventArgs e)
         {
-
+            Fee fee = new Fee();
+            txtOrig.Text = fee.ToString();
         }
     }
 }

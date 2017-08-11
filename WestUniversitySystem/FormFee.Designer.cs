@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFee));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.txtMajor = new System.Windows.Forms.TextBox();
+            this.txtMinor = new System.Windows.Forms.TextBox();
+            this.txt2nd = new System.Windows.Forms.TextBox();
+            this.txt3rd = new System.Windows.Forms.TextBox();
+            this.txtDisc = new System.Windows.Forms.TextBox();
+            this.txtGrad = new System.Windows.Forms.TextBox();
+            this.txt4th = new System.Windows.Forms.TextBox();
+            this.txtLab = new System.Windows.Forms.TextBox();
+            this.txt1st = new System.Windows.Forms.TextBox();
+            this.txtOrig = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,24 +62,24 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(830, 60);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // lblName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(70, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "<name>";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(70, 20);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(69, 20);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "<name>";
             // 
             // pictureBox1
             // 
@@ -91,90 +91,90 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btnLogout
             // 
-            this.button1.BackgroundImage = global::WestUniversitySystem.Properties.Resources.icons8_Exit_64_white;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(772, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogout.BackgroundImage = global::WestUniversitySystem.Properties.Resources.icons8_Exit_64_white;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Location = new System.Drawing.Point(772, 15);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(30, 30);
+            this.btnLogout.TabIndex = 1;
+            this.btnLogout.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtMajor
             // 
-            this.textBox1.Location = new System.Drawing.Point(487, 122);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 1;
+            this.txtMajor.Location = new System.Drawing.Point(487, 122);
+            this.txtMajor.Name = "txtMajor";
+            this.txtMajor.Size = new System.Drawing.Size(100, 25);
+            this.txtMajor.TabIndex = 1;
             // 
-            // textBox2
+            // txtMinor
             // 
-            this.textBox2.Location = new System.Drawing.Point(487, 153);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 25);
-            this.textBox2.TabIndex = 2;
+            this.txtMinor.Location = new System.Drawing.Point(487, 153);
+            this.txtMinor.Name = "txtMinor";
+            this.txtMinor.Size = new System.Drawing.Size(100, 25);
+            this.txtMinor.TabIndex = 2;
             // 
-            // textBox3
+            // txt2nd
             // 
-            this.textBox3.Location = new System.Drawing.Point(487, 271);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 25);
-            this.textBox3.TabIndex = 3;
+            this.txt2nd.Location = new System.Drawing.Point(487, 271);
+            this.txt2nd.Name = "txt2nd";
+            this.txt2nd.Size = new System.Drawing.Size(100, 25);
+            this.txt2nd.TabIndex = 3;
             // 
-            // textBox4
+            // txt3rd
             // 
-            this.textBox4.Location = new System.Drawing.Point(487, 302);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 25);
-            this.textBox4.TabIndex = 4;
+            this.txt3rd.Location = new System.Drawing.Point(487, 302);
+            this.txt3rd.Name = "txt3rd";
+            this.txt3rd.Size = new System.Drawing.Size(100, 25);
+            this.txt3rd.TabIndex = 4;
             // 
-            // textBox5
+            // txtDisc
             // 
-            this.textBox5.Location = new System.Drawing.Point(666, 225);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 25);
-            this.textBox5.TabIndex = 5;
+            this.txtDisc.Location = new System.Drawing.Point(669, 333);
+            this.txtDisc.Name = "txtDisc";
+            this.txtDisc.Size = new System.Drawing.Size(100, 25);
+            this.txtDisc.TabIndex = 5;
             // 
-            // textBox6
+            // txtGrad
             // 
-            this.textBox6.Location = new System.Drawing.Point(669, 333);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 25);
-            this.textBox6.TabIndex = 6;
+            this.txtGrad.Location = new System.Drawing.Point(669, 240);
+            this.txtGrad.Name = "txtGrad";
+            this.txtGrad.Size = new System.Drawing.Size(100, 25);
+            this.txtGrad.TabIndex = 6;
             // 
-            // textBox7
+            // txt4th
             // 
-            this.textBox7.Location = new System.Drawing.Point(487, 333);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 25);
-            this.textBox7.TabIndex = 7;
+            this.txt4th.Location = new System.Drawing.Point(487, 333);
+            this.txt4th.Name = "txt4th";
+            this.txt4th.Size = new System.Drawing.Size(100, 25);
+            this.txt4th.TabIndex = 7;
             // 
-            // textBox8
+            // txtLab
             // 
-            this.textBox8.Location = new System.Drawing.Point(669, 122);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 25);
-            this.textBox8.TabIndex = 8;
+            this.txtLab.Location = new System.Drawing.Point(669, 122);
+            this.txtLab.Name = "txtLab";
+            this.txtLab.Size = new System.Drawing.Size(100, 25);
+            this.txtLab.TabIndex = 8;
             // 
-            // textBox9
+            // txt1st
             // 
-            this.textBox9.Location = new System.Drawing.Point(487, 240);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 25);
-            this.textBox9.TabIndex = 9;
+            this.txt1st.Location = new System.Drawing.Point(487, 240);
+            this.txt1st.Name = "txt1st";
+            this.txt1st.Size = new System.Drawing.Size(100, 25);
+            this.txt1st.TabIndex = 9;
             // 
-            // richTextBox1
+            // txtOrig
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(39, 88);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(284, 270);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
+            this.txtOrig.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtOrig.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOrig.Location = new System.Drawing.Point(39, 88);
+            this.txtOrig.Name = "txtOrig";
+            this.txtOrig.Size = new System.Drawing.Size(284, 270);
+            this.txtOrig.TabIndex = 10;
+            this.txtOrig.Text = "";
             // 
             // label2
             // 
@@ -206,7 +206,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(666, 299);
+            this.label5.Location = new System.Drawing.Point(666, 206);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 18);
             this.label5.TabIndex = 14;
@@ -215,7 +215,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(663, 191);
+            this.label6.Location = new System.Drawing.Point(666, 299);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 18);
             this.label6.TabIndex = 15;
@@ -308,16 +308,16 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtOrig);
+            this.Controls.Add(this.txt1st);
+            this.Controls.Add(this.txtLab);
+            this.Controls.Add(this.txt4th);
+            this.Controls.Add(this.txtGrad);
+            this.Controls.Add(this.txtDisc);
+            this.Controls.Add(this.txt3rd);
+            this.Controls.Add(this.txt2nd);
+            this.Controls.Add(this.txtMinor);
+            this.Controls.Add(this.txtMajor);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -337,19 +337,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.TextBox txtMajor;
+        private System.Windows.Forms.TextBox txtMinor;
+        private System.Windows.Forms.TextBox txt2nd;
+        private System.Windows.Forms.TextBox txt3rd;
+        private System.Windows.Forms.TextBox txtDisc;
+        private System.Windows.Forms.TextBox txtGrad;
+        private System.Windows.Forms.TextBox txt4th;
+        private System.Windows.Forms.TextBox txtLab;
+        private System.Windows.Forms.TextBox txt1st;
+        private System.Windows.Forms.RichTextBox txtOrig;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

@@ -23,6 +23,11 @@ namespace WestUniversitySystem
 
         static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
+        public Fee()
+        {
+            LoadValues();
+        }
+
         public Fee(double tuitionMajor, double tuitionMinor, double misc1st, double misc2nd, double misc3rd, double misc4th, double lab, double graduation, double discount)
         {
             this.TuitionMajor = tuitionMajor;
@@ -187,13 +192,41 @@ namespace WestUniversitySystem
             }
             
         }
-
-        public Fee()
+        
+        private void LoadValues()
         {
-
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                {
+                    myConn.Open();
+                    string query = "SELECT * FROM fee WHERE id = 1;";
+                    using (MySqlCommand command = new MySqlCommand(query, myConn))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                this.TuitionMajor = reader.GetDouble(1);
+                                this.TuitionMinor = reader.GetDouble(2);
+                                this.Misc1st = reader.GetDouble(3);
+                                this.Misc2nd = reader.GetDouble(4);
+                                this.Misc3rd = reader.GetDouble(5);
+                                this.Misc4th = reader.GetDouble(6);
+                                this.Lab = reader.GetDouble(7);
+                                this.Graduation = reader.GetDouble(8);
+                                this.Discount = reader.GetDouble(9);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
-
-
+        
 
 
 
