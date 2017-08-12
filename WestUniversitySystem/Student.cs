@@ -637,7 +637,7 @@ namespace WestUniversitySystem
 
         public void Insert()
         {
-            string query = "INSERT INTO student_info (Password, EntryDate, Level, Status,"
+            string query = "INSERT INTO student_all (Password, EntryDate, Level, Status,"
                 + " CourseCode, Major, LastName, FirstName, MiddleName,"
                 + " Address, Sex, BirthDate, BirthPlace, Citizenship, Religion, ContactNo,"
                 + " Former, Tertiary, Secondary, Prim, FormerYear, TertiaryYear, SecondaryYear, PrimaryYear,"
@@ -646,7 +646,7 @@ namespace WestUniversitySystem
                 + " GuarName, Relation, GuarNum, ParentAdd"
                 + ")"
                 + " VALUES"
-                + " (@Password,@EntryDate,@Level,@Status,@CourseCode,"
+                + " ('@Password','@EntryDate',@Level,@Status,'@CourseCode',"
                 + " @Major,@LastName,@FirstName,@MiddleName,@Address,@Sex,"
                 + " @BirthDate,@BirthPlace,@Citizenship,@Religion,@ContactNo)"
                 + " @Former, @Tertiary, @Secondary, @Prim, @FormerYear, @TertiaryYear, @SecondaryYear, @PrimaryYear,"

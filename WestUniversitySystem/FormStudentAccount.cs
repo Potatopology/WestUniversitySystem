@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ namespace WestUniversitySystem
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-
+            insertValues();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -49,7 +50,8 @@ namespace WestUniversitySystem
             try
             {
                 student.Password = Convert.ToString(txtPassword.Text);
-                student.EntryDate = Convert.ToDateTime("");
+                student.EntryDate = DateTime.Now;
+                Debug.Print(student.EntryDate.ToString());
                 student.Level = Convert.ToInt32(txtLevel.Text);
                 student.Status = Convert.ToString(cmbStatus.Text);
                 student.Course = Convert.ToString(txtCourse.Text);
@@ -59,7 +61,8 @@ namespace WestUniversitySystem
                 student.MiddleName = Convert.ToString(txtMiddle.Text);
                 student.Address = Convert.ToString(txtAddress.Text);
                 student.Sex = Convert.ToString(cmbSex.Text);
-                student.Bday = Convert.ToDateTime(dtpBday);
+                student.Bday = Convert.ToDateTime(dtpBday.Text);
+                Debug.Print(student.Bday.ToString());
                 student.Bplace = Convert.ToString(txtBplace.Text);
                 student.Citizenship = Convert.ToString(txtCitizen.Text);
                 student.Religion = Convert.ToString(txtReligion.Text);
