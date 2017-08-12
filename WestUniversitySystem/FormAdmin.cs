@@ -32,6 +32,7 @@ namespace WestUniversitySystem
         private void btnAccount_Click(object sender, EventArgs e)
         {
             FormStudentAccount form = new FormStudentAccount();
+            form.Passvalue = Nm;
             form.Show();
             this.Close();
         }

@@ -98,7 +98,7 @@
             this.txtMomNum = new System.Windows.Forms.TextBox();
             this.txtMomJob = new System.Windows.Forms.TextBox();
             this.txtMomName = new System.Windows.Forms.TextBox();
-            this.txtGuarJob = new System.Windows.Forms.TextBox();
+            this.txtRelation = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.txtParentAdd = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -721,12 +721,12 @@
             this.txtMomName.Size = new System.Drawing.Size(122, 25);
             this.txtMomName.TabIndex = 67;
             // 
-            // txtGuarJob
+            // txtRelation
             // 
-            this.txtGuarJob.Location = new System.Drawing.Point(553, 508);
-            this.txtGuarJob.Name = "txtGuarJob";
-            this.txtGuarJob.Size = new System.Drawing.Size(122, 25);
-            this.txtGuarJob.TabIndex = 68;
+            this.txtRelation.Location = new System.Drawing.Point(553, 508);
+            this.txtRelation.Name = "txtRelation";
+            this.txtRelation.Size = new System.Drawing.Size(122, 25);
+            this.txtRelation.TabIndex = 68;
             // 
             // label26
             // 
@@ -781,7 +781,7 @@
             this.Controls.Add(this.txtParentAdd);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);
-            this.Controls.Add(this.txtGuarJob);
+            this.Controls.Add(this.txtRelation);
             this.Controls.Add(this.txtMomName);
             this.Controls.Add(this.txtMomJob);
             this.Controls.Add(this.txtMomNum);
@@ -930,7 +930,7 @@
         private System.Windows.Forms.TextBox txtMomNum;
         private System.Windows.Forms.TextBox txtMomJob;
         private System.Windows.Forms.TextBox txtMomName;
-        private System.Windows.Forms.TextBox txtGuarJob;
+        private System.Windows.Forms.TextBox txtRelation;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtParentAdd;
         private System.Windows.Forms.Label label27;

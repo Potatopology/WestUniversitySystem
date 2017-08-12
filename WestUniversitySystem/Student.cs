@@ -55,49 +55,51 @@ namespace WestUniversitySystem
 
         static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
+        public Student() { }
+
         public Student(int sn, string password, DateTime entryDate, int level, string status, string course, string major, string lastName, string firstName, string middleName, string address, string sex, DateTime bday, string bplace, string citizenship, string religion, string contact, string former, string tertiary, string secondary, string prim, string formerYear, string tertiaryYear, string secondaryYear, string primaryYear, int nsat, int form137, int transferCred, int tor, int gmc, int birthCert, string dadName, string dadJob, string dadNum, string momName, string momJob, string momNum, string guarName, string relation, string guarNum, string parentAdd)
         {
-            this.sn = sn;
-            this.password = password;
-            this.entryDate = entryDate;
-            this.level = level;
-            this.status = status;
-            this.course = course;
-            this.major = major;
-            this.lastName = lastName;
-            this.firstName = firstName;
-            this.middleName = middleName;
-            this.address = address;
-            this.sex = sex;
-            this.bday = bday;
-            this.bplace = bplace;
-            this.citizenship = citizenship;
-            this.religion = religion;
-            this.contact = contact;
-            this.former = former;
-            this.tertiary = tertiary;
-            this.secondary = secondary;
-            this.prim = prim;
-            this.formerYear = formerYear;
-            this.tertiaryYear = tertiaryYear;
-            this.secondaryYear = secondaryYear;
-            this.primaryYear = primaryYear;
-            this.nsat = nsat;
-            this.form137 = form137;
-            this.transferCred = transferCred;
-            this.tor = tor;
-            this.gmc = gmc;
-            this.birthCert = birthCert;
-            this.dadName = dadName;
-            this.dadJob = dadJob;
-            this.dadNum = dadNum;
-            this.momName = momName;
-            this.momJob = momJob;
-            this.momNum = momNum;
-            this.guarName = guarName;
-            this.relation = relation;
-            this.guarNum = guarNum;
-            this.parentAdd = parentAdd;
+            this.Sn = sn;
+            this.Password = password;
+            this.EntryDate = entryDate;
+            this.Level = level;
+            this.Status = status;
+            this.Course = course;
+            this.Major = major;
+            this.LastName = lastName;
+            this.FirstName = firstName;
+            this.MiddleName = middleName;
+            this.Address = address;
+            this.Sex = sex;
+            this.Bday = bday;
+            this.Bplace = bplace;
+            this.Citizenship = citizenship;
+            this.Religion = religion;
+            this.Contact = contact;
+            this.Former = former;
+            this.Tertiary = tertiary;
+            this.Secondary = secondary;
+            this.Prim = prim;
+            this.FormerYear = formerYear;
+            this.TertiaryYear = tertiaryYear;
+            this.SecondaryYear = secondaryYear;
+            this.PrimaryYear = primaryYear;
+            this.Nsat = nsat;
+            this.Form137 = form137;
+            this.TransferCred = transferCred;
+            this.Tor = tor;
+            this.Gmc = gmc;
+            this.BirthCert = birthCert;
+            this.DadName = dadName;
+            this.DadJob = dadJob;
+            this.DadNum = dadNum;
+            this.MomName = momName;
+            this.MomJob = momJob;
+            this.MomNum = momNum;
+            this.GuarName = guarName;
+            this.Relation = relation;
+            this.GuarNum = guarNum;
+            this.ParentAdd = parentAdd;
         }
 
         public int Sn
