@@ -28,54 +28,76 @@ namespace WestUniversitySystem
         private string citizenship;
         private string religion;
         private string contact;
+        private string former;
+        private string tertiary;
+        private string secondary;
+        private string prim;
+        private string formerYear;
+        private string tertiaryYear;
+        private string secondaryYear;
+        private string primaryYear;
+        private int nsat;
+        private int form137;
+        private int transferCred;
+        private int tor;
+        private int gmc;
+        private int birthCert;
+        private string dadName;
+        private string dadJob;
+        private string dadNum;
+        private string momName;
+        private string momJob;
+        private string momNum;
+        private string guarName;
+        private string relation;
+        private string guarNum;
+        private string parentAdd;
 
         static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
-        public Student()
+        public Student(int sn, string password, DateTime entryDate, int level, string status, string course, string major, string lastName, string firstName, string middleName, string address, string sex, DateTime bday, string bplace, string citizenship, string religion, string contact, string former, string tertiary, string secondary, string prim, string formerYear, string tertiaryYear, string secondaryYear, string primaryYear, int nsat, int form137, int transferCred, int tor, int gmc, int birthCert, string dadName, string dadJob, string dadNum, string momName, string momJob, string momNum, string guarName, string relation, string guarNum, string parentAdd)
         {
-
-        }
-
-        public Student(string password, DateTime entryDate, int level, string status, string course, string major, string lastName, string firstName, string middleName, string address, string sex, DateTime bday, string bplace, string citizenship, string religion, string contact)
-        {
-            this.Sn = 0;
-            this.Password = password;
-            this.EntryDate = entryDate;
-            this.Level = level;
-            this.Status = status;
-            this.Course = course;
-            this.Major = major;
-            this.LastName = lastName;
-            this.FirstName = firstName;
-            this.MiddleName = middleName;
-            this.Address = address;
-            this.Sex = sex;
-            this.Bday = bday;
-            this.Bplace = bplace;
-            this.Citizenship = citizenship;
-            this.Religion = religion;
-            this.Contact = contact;
-        }
-
-        public Student(int sn, string password, DateTime entryDate, int level, string status, string course, string major, string lastName, string firstName, string middleName, string address, string sex, DateTime bday, string bplace, string citizenship, string religion, string contact)
-        {
-            this.Sn = sn;
-            this.Password = password;
-            this.EntryDate = entryDate;
-            this.Level = level;
-            this.Status = status;
-            this.Course = course;
-            this.Major = major;
-            this.LastName = lastName;
-            this.FirstName = firstName;
-            this.MiddleName = middleName;
-            this.Address = address;
-            this.Sex = sex;
-            this.Bday = bday;
-            this.Bplace = bplace;
-            this.Citizenship = citizenship;
-            this.Religion = religion;
-            this.Contact = contact;
+            this.sn = sn;
+            this.password = password;
+            this.entryDate = entryDate;
+            this.level = level;
+            this.status = status;
+            this.course = course;
+            this.major = major;
+            this.lastName = lastName;
+            this.firstName = firstName;
+            this.middleName = middleName;
+            this.address = address;
+            this.sex = sex;
+            this.bday = bday;
+            this.bplace = bplace;
+            this.citizenship = citizenship;
+            this.religion = religion;
+            this.contact = contact;
+            this.former = former;
+            this.tertiary = tertiary;
+            this.secondary = secondary;
+            this.prim = prim;
+            this.formerYear = formerYear;
+            this.tertiaryYear = tertiaryYear;
+            this.secondaryYear = secondaryYear;
+            this.primaryYear = primaryYear;
+            this.nsat = nsat;
+            this.form137 = form137;
+            this.transferCred = transferCred;
+            this.tor = tor;
+            this.gmc = gmc;
+            this.birthCert = birthCert;
+            this.dadName = dadName;
+            this.dadJob = dadJob;
+            this.dadNum = dadNum;
+            this.momName = momName;
+            this.momJob = momJob;
+            this.momNum = momNum;
+            this.guarName = guarName;
+            this.relation = relation;
+            this.guarNum = guarNum;
+            this.parentAdd = parentAdd;
         }
 
         public int Sn
@@ -299,7 +321,317 @@ namespace WestUniversitySystem
             }
         }
 
-        
+        public string Former
+        {
+            get
+            {
+                return former;
+            }
+
+            set
+            {
+                former = value;
+            }
+        }
+
+        public string Tertiary
+        {
+            get
+            {
+                return tertiary;
+            }
+
+            set
+            {
+                tertiary = value;
+            }
+        }
+
+        public string Secondary
+        {
+            get
+            {
+                return secondary;
+            }
+
+            set
+            {
+                secondary = value;
+            }
+        }
+
+        public string Prim
+        {
+            get
+            {
+                return prim;
+            }
+
+            set
+            {
+                prim = value;
+            }
+        }
+
+        public string FormerYear
+        {
+            get
+            {
+                return formerYear;
+            }
+
+            set
+            {
+                formerYear = value;
+            }
+        }
+
+        public string TertiaryYear
+        {
+            get
+            {
+                return tertiaryYear;
+            }
+
+            set
+            {
+                tertiaryYear = value;
+            }
+        }
+
+        public string SecondaryYear
+        {
+            get
+            {
+                return secondaryYear;
+            }
+
+            set
+            {
+                secondaryYear = value;
+            }
+        }
+
+        public string PrimaryYear
+        {
+            get
+            {
+                return primaryYear;
+            }
+
+            set
+            {
+                primaryYear = value;
+            }
+        }
+
+        public int Nsat
+        {
+            get
+            {
+                return nsat;
+            }
+
+            set
+            {
+                nsat = value;
+            }
+        }
+
+        public int Form137
+        {
+            get
+            {
+                return form137;
+            }
+
+            set
+            {
+                form137 = value;
+            }
+        }
+
+        public int TransferCred
+        {
+            get
+            {
+                return transferCred;
+            }
+
+            set
+            {
+                transferCred = value;
+            }
+        }
+
+        public int Tor
+        {
+            get
+            {
+                return tor;
+            }
+
+            set
+            {
+                tor = value;
+            }
+        }
+
+        public int Gmc
+        {
+            get
+            {
+                return gmc;
+            }
+
+            set
+            {
+                gmc = value;
+            }
+        }
+
+        public int BirthCert
+        {
+            get
+            {
+                return birthCert;
+            }
+
+            set
+            {
+                birthCert = value;
+            }
+        }
+
+        public string DadName
+        {
+            get
+            {
+                return dadName;
+            }
+
+            set
+            {
+                dadName = value;
+            }
+        }
+
+        public string DadJob
+        {
+            get
+            {
+                return dadJob;
+            }
+
+            set
+            {
+                dadJob = value;
+            }
+        }
+
+        public string DadNum
+        {
+            get
+            {
+                return dadNum;
+            }
+
+            set
+            {
+                dadNum = value;
+            }
+        }
+
+        public string MomName
+        {
+            get
+            {
+                return momName;
+            }
+
+            set
+            {
+                momName = value;
+            }
+        }
+
+        public string MomJob
+        {
+            get
+            {
+                return momJob;
+            }
+
+            set
+            {
+                momJob = value;
+            }
+        }
+
+        public string MomNum
+        {
+            get
+            {
+                return momNum;
+            }
+
+            set
+            {
+                momNum = value;
+            }
+        }
+
+        public string GuarName
+        {
+            get
+            {
+                return guarName;
+            }
+
+            set
+            {
+                guarName = value;
+            }
+        }
+
+        public string Relation
+        {
+            get
+            {
+                return relation;
+            }
+
+            set
+            {
+                relation = value;
+            }
+        }
+
+        public string GuarNum
+        {
+            get
+            {
+                return guarNum;
+            }
+
+            set
+            {
+                guarNum = value;
+            }
+        }
+
+        public string ParentAdd
+        {
+            get
+            {
+                return parentAdd;
+            }
+
+            set
+            {
+                parentAdd = value;
+            }
+        }
 
         public void Insert()
         {
