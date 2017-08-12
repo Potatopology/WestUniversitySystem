@@ -38,7 +38,7 @@ namespace WestUniversitySystem
 
         public Student(string password, DateTime entryDate, int level, string status, string course, string major, string lastName, string firstName, string middleName, string address, string sex, DateTime bday, string bplace, string citizenship, string religion, string contact)
         {
-            this.Sn = "";
+            this.Sn = 0;
             this.Password = password;
             this.EntryDate = entryDate;
             this.Level = level;

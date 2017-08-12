@@ -365,6 +365,8 @@
             // 
             // dtpBday
             // 
+            this.dtpBday.CustomFormat = "yyyy-MM-dd";
+            this.dtpBday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBday.Location = new System.Drawing.Point(131, 384);
             this.dtpBday.Name = "dtpBday";
             this.dtpBday.Size = new System.Drawing.Size(200, 25);
