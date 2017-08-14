@@ -274,7 +274,6 @@ namespace WestUniversitySystem
                 contact = value;
             }
         }
-
         
         public void Insert()
         {
@@ -292,7 +291,7 @@ namespace WestUniversitySystem
                 using (MySqlConnection myConn = new MySqlConnection(connection))
                 using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
                 {
-                    //myCommand.Parameters.AddWithValue("@SN", this.Sn.ToString());
+                    myCommand.Parameters.AddWithValue("@SN", this.Sn.ToString());
                     myCommand.Parameters.AddWithValue("@Password", this.Password.ToString());
                     myCommand.Parameters.AddWithValue("@EntryDate", this.EntryDate.ToString());
                     myCommand.Parameters.AddWithValue("@Level", this.Level.ToString());
@@ -343,6 +342,60 @@ namespace WestUniversitySystem
                 + "Religion: " + this.Religion.ToString() + "\n"
                 + "ContactNo: " + this.Contact.ToString();
         }
+
+        public static long GenerateSN(int year)
+        {
+            Random generator = new Random();
+            String randomNum = year.ToString() + generator.Next(0, 10000000).ToString("D7");
+            return Convert.ToInt64(randomNum);
+        }
+
+        public static long ValidateSN(int year)
+        {
+            bool isUnique = false;
+            long sn = 0;
+
+            while (!isUnique)
+            {
+                try
+                {
+                    sn = GenerateSN(year);
+                    using (MySqlConnection myConn = new MySqlConnection(connection))
+                    {
+                        myConn.Open();
+                        string query = "Select * from enroldb.student_info where SN='" + sn + "';";
+                        using (MySqlCommand command = new MySqlCommand(query, myConn))
+                        {
+                            using (MySqlDataReader reader = command.ExecuteReader())
+                            {
+                                int count = 0;
+                                while (reader.Read())
+                                {
+                                    count = count + 1;
+                                }
+                                if (count == 1)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    isUnique = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+            return sn;
+        }
+
+
+
+
 
     }
 }
