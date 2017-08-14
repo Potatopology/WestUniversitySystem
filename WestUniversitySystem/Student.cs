@@ -641,18 +641,18 @@ namespace WestUniversitySystem
                 + " CourseCode, Major, LastName, FirstName, MiddleName,"
                 + " Address, Sex, BirthDate, BirthPlace, Citizenship, Religion, ContactNo,"
                 + " Former, Tertiary, Secondary, Prim, FormerYear, TertiaryYear, SecondaryYear, PrimaryYear,"
-                + " Nsat, Form137, TransferCred, Prim, Tor, Gmc, BirthCert,"
+                + " Nsat, Form137, TransferCred, Tor, Gmc, BirthCert,"
                 + " DadName, DadJob, DadNum, MomName, MomJob, MomNum,"
                 + " GuarName, Relation, GuarNum, ParentAdd"
                 + ")"
                 + " VALUES"
                 + " ('@Password','@EntryDate',@Level,@Status,'@CourseCode',"
-                + " @Major,@LastName,@FirstName,@MiddleName,@Address,@Sex,"
-                + " @BirthDate,@BirthPlace,@Citizenship,@Religion,@ContactNo)"
-                + " @Former, @Tertiary, @Secondary, @Prim, @FormerYear, @TertiaryYear, @SecondaryYear, @PrimaryYear,"
-                + " @Nsat, @Form137, @TransferCred, @Prim, @Tor, @Gmc, @BirthCert,"
-                + " @DadName, @DadJob, @DadNum, @MomName, @MomJob, @MomNum,"
-                + " @GuarName, @Relation, @GuarNum, @ParentAdd"
+                + " '@Major','@LastName','@FirstName','@MiddleName','@Address','@Sex',"
+                + " '@BirthDate','@BirthPlace','@Citizenship','@Religion','@ContactNo'"
+                + " '@Former', '@Tertiary', '@Secondary', '@Prim', '@FormerYear', '@TertiaryYear', '@SecondaryYear', '@PrimaryYear',"
+                + " '@Nsat', '@Form137', '@TransferCred','@Tor', '@Gmc', '@BirthCert',"
+                + " '@DadName', '@DadJob', '@DadNum', '@MomName', '@MomJob', '@MomNum',"
+                + " '@GuarName', '@Relation', '@GuarNum', '@ParentAdd'"
                 + ");";
 
             try
@@ -677,30 +677,30 @@ namespace WestUniversitySystem
                     myCommand.Parameters.AddWithValue("@Citizenship", this.Citizenship.ToString());
                     myCommand.Parameters.AddWithValue("@Religion", this.Religion.ToString());
                     myCommand.Parameters.AddWithValue("@ContactNo", this.Contact.ToString());
-                    myCommand.Parameters.AddWithValue("@Former", this.Sn.ToString());
-                    myCommand.Parameters.AddWithValue("@Tertiary", this.Password.ToString());
-                    myCommand.Parameters.AddWithValue("@Secondary", this.EntryDate.ToString());
-                    myCommand.Parameters.AddWithValue("@Prim", this.Level.ToString());
-                    myCommand.Parameters.AddWithValue("@FormerYear", this.Status.ToString());
-                    myCommand.Parameters.AddWithValue("@TertiaryYear", this.Course.ToString());
-                    myCommand.Parameters.AddWithValue("@SecondaryYear", this.Major.ToString());
-                    myCommand.Parameters.AddWithValue("@PrimaryYear", this.LastName.ToString());
-                    myCommand.Parameters.AddWithValue("@Nsat", this.FirstName.ToString());
-                    myCommand.Parameters.AddWithValue("@Form137", this.MiddleName.ToString());
-                    myCommand.Parameters.AddWithValue("@TransferCred", this.Address.ToString());
-                    myCommand.Parameters.AddWithValue("@Tor", this.Sex.ToString());
-                    myCommand.Parameters.AddWithValue("@Gmc", this.Bday.ToString());
-                    myCommand.Parameters.AddWithValue("@BirthCert", this.Bplace.ToString());
-                    myCommand.Parameters.AddWithValue("@DadName", this.Citizenship.ToString());
-                    myCommand.Parameters.AddWithValue("@DadJob", this.Religion.ToString());
-                    myCommand.Parameters.AddWithValue("@DadNum", this.Contact.ToString());
-                    myCommand.Parameters.AddWithValue("@MomName", this.Citizenship.ToString());
-                    myCommand.Parameters.AddWithValue("@MomJob", this.Religion.ToString());
-                    myCommand.Parameters.AddWithValue("@MomNum", this.Contact.ToString());
-                    myCommand.Parameters.AddWithValue("@GuarName", this.Citizenship.ToString());
-                    myCommand.Parameters.AddWithValue("@Relation", this.Religion.ToString());
-                    myCommand.Parameters.AddWithValue("@GuarNum", this.Contact.ToString());
-                    myCommand.Parameters.AddWithValue("@ParentAdd", this.Contact.ToString());
+                    myCommand.Parameters.AddWithValue("@Former", this.Former.ToString());
+                    myCommand.Parameters.AddWithValue("@Tertiary", this.Tertiary.ToString());
+                    myCommand.Parameters.AddWithValue("@Secondary", this.Secondary.ToString());
+                    myCommand.Parameters.AddWithValue("@Prim", this.Prim.ToString());
+                    myCommand.Parameters.AddWithValue("@FormerYear", this.FormerYear.ToString());
+                    myCommand.Parameters.AddWithValue("@TertiaryYear", this.TertiaryYear.ToString());
+                    myCommand.Parameters.AddWithValue("@SecondaryYear", this.SecondaryYear.ToString());
+                    myCommand.Parameters.AddWithValue("@PrimaryYear", this.PrimaryYear.ToString());
+                    myCommand.Parameters.AddWithValue("@Nsat", this.Nsat.ToString());
+                    myCommand.Parameters.AddWithValue("@Form137", this.Form137.ToString());
+                    myCommand.Parameters.AddWithValue("@TransferCred", this.TransferCred.ToString());
+                    myCommand.Parameters.AddWithValue("@Tor", this.Tor.ToString());
+                    myCommand.Parameters.AddWithValue("@Gmc", this.Gmc.ToString());
+                    myCommand.Parameters.AddWithValue("@BirthCert", this.BirthCert.ToString());
+                    myCommand.Parameters.AddWithValue("@DadName", this.DadName.ToString());
+                    myCommand.Parameters.AddWithValue("@DadJob", this.DadJob.ToString());
+                    myCommand.Parameters.AddWithValue("@DadNum", this.DadNum.ToString());
+                    myCommand.Parameters.AddWithValue("@MomName", this.MomName.ToString());
+                    myCommand.Parameters.AddWithValue("@MomJob", this.MomJob.ToString());
+                    myCommand.Parameters.AddWithValue("@MomNum", this.MomNum.ToString());
+                    myCommand.Parameters.AddWithValue("@GuarName", this.GuarName.ToString());
+                    myCommand.Parameters.AddWithValue("@Relation", this.Relation.ToString());
+                    myCommand.Parameters.AddWithValue("@GuarNum", this.GuarNum.ToString());
+                    myCommand.Parameters.AddWithValue("@ParentAdd", this.ParentAdd.ToString());
 
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
