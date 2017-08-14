@@ -34,7 +34,7 @@ namespace WestUniversitySystem
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            Debug.Print(Student.ValidateSN(2017).ToString());
+            InsertValues();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -49,24 +49,23 @@ namespace WestUniversitySystem
         {
             try
             {
-                student.Password = Convert.ToString(txtPassword.Text);
-                //student.EntryDate = DateTime.Now;
-                Debug.Print(student.EntryDate.ToString());
+                student.Sn = Student.ValidateSN(2017);
+                student.Password = txtPassword.Text;
+                student.EntryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 student.Level = Convert.ToInt32(txtLevel.Text);
-                student.Status = Convert.ToString(cmbStatus.Text);
-                student.Course = Convert.ToString(txtCourse.Text);
-                student.Major = Convert.ToString(txtMajor.Text);
-                student.LastName = Convert.ToString(txtLast.Text);
-                student.FirstName = Convert.ToString(txtFirst.Text);
-                student.MiddleName = Convert.ToString(txtMiddle.Text);
-                student.Address = Convert.ToString(txtAddress.Text);
-                student.Sex = Convert.ToString(cmbSex.Text);
-                //student.Bday = Convert.ToDateTime(dtpBday.Text);
-                Debug.Print(student.Bday.ToString());
-                student.Bplace = Convert.ToString(txtBplace.Text);
-                student.Citizenship = Convert.ToString(txtCitizen.Text);
-                student.Religion = Convert.ToString(txtReligion.Text);
-                student.Contact = Convert.ToString(txtContact.Text);
+                student.Status = cmbStatus.Text;
+                student.Course = txtCourse.Text;
+                student.Major = txtMajor.Text;
+                student.LastName = txtLast.Text;
+                student.FirstName = txtFirst.Text;
+                student.MiddleName = txtMiddle.Text;
+                student.Address = txtAddress.Text;
+                student.Sex = cmbSex.Text;
+                student.Bday = dtpBday.Text;
+                student.Bplace = txtBplace.Text;
+                student.Citizenship = txtCitizen.Text;
+                student.Religion = txtReligion.Text;
+                student.Contact = txtContact.Text;
                 
                 student.Insert();
             }

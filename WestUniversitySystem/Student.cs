@@ -11,7 +11,7 @@ namespace WestUniversitySystem
 {
     class Student
     {
-        private int sn;
+        private long sn;
         private string password;
         private string entryDate;
         private int level;
@@ -33,7 +33,7 @@ namespace WestUniversitySystem
 
         public Student() { }
 
-        public Student(int sn, string password, string entryDate, int level, string status, string course, string major, string lastName, string firstName, string middleName, string address, string sex, string bday, string bplace, string citizenship, string religion, string contact)
+        public Student(long sn, string password, string entryDate, int level, string status, string course, string major, string lastName, string firstName, string middleName, string address, string sex, string bday, string bplace, string citizenship, string religion, string contact)
         {
             this.Sn = sn;
             this.Password = password;
@@ -54,7 +54,7 @@ namespace WestUniversitySystem
             this.Contact = contact;
         }
 
-        public int Sn
+        public long Sn
         {
             get
             {
@@ -281,10 +281,7 @@ namespace WestUniversitySystem
                 + " CourseCode, Major, LastName, FirstName, MiddleName,"
                 + " Address, Sex, BirthDate, BirthPlace, Citizenship, Religion, ContactNo)"
                 + " VALUES"
-                + " (@SN,@Password,@EntryDate,@Level,@Status,@CourseCode,"
-                + " @Major,@LastName,@FirstName,@MiddleName,@Address,@Sex,"
-                + " @BirthDate,@BirthPlace,@Citizenship,@Religion,@ContactNo)"
-                + ");";
+                + " (@SN, @Password, @EntryDate, @Level, @Status, @CourseCode, @Major, @LastName, @FirstName, @MiddleName, @Address, @Sex, @BirthDate, @BirthPlace, @Citizenship, @Religion, @ContactNo);";
 
             try
             {
