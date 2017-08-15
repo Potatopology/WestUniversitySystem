@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Education.cs" />
     <Compile Include="EnrollDatabase.cs" />
     <Compile Include="Fee.cs" />
     <Compile Include="FormAdmin.cs">

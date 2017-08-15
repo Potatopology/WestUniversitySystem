@@ -49,7 +49,8 @@ namespace WestUniversitySystem
         {
             try
             {
-                student.Sn = Student.ValidateSN(2017);
+                long studentNum = Student.ValidateSN(2017);
+                student.Sn = studentNum;
                 student.Password = txtPassword.Text;
                 student.EntryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 student.Level = Convert.ToInt32(txtLevel.Text);
@@ -68,6 +69,8 @@ namespace WestUniversitySystem
                 student.Contact = txtContact.Text;
                 
                 student.Insert();
+
+
             }
             catch (Exception e)
             {
