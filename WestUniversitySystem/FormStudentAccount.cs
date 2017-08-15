@@ -21,6 +21,7 @@ namespace WestUniversitySystem
         }
 
         Student student = new Student();
+        Education education = new Education();
 
         public FormStudentAccount()
         {
@@ -70,7 +71,17 @@ namespace WestUniversitySystem
                 
                 student.Insert();
 
+                education.StudentSn = studentNum;
+                education.FormerSchool = txtFormer.Text;
+                education.FormerYears = txtFormerYear.Text;
+                education.TertiaryEd = txtTertiary.Text;
+                education.TertiaryYears = txtTertiaryYear.Text;
+                education.SecondaryEd = txtSecondary.Text;
+                education.SecondaryYears = txtSecondaryYear.Text;
+                education.PrimaryEd = txtPrimary.Text;
+                education.PrimaryYears = txtPrimaryYear.Text;
 
+                education.Insert();
             }
             catch (Exception e)
             {

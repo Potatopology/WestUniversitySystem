@@ -11,7 +11,7 @@ namespace WestUniversitySystem
 {
     class Education
     {
-        private string studentSn;
+        private long studentSn;
         private string formerSchool;
         private string formerYears;
         private string tertiaryEd;
@@ -28,7 +28,7 @@ namespace WestUniversitySystem
 
         }
 
-        public Education(string studentSn, string formerSchool, string formerYears, string tertiaryEd, string tertiaryYears, string secondaryEd, string secondaryYears, string primaryEd, string primaryYears)
+        public Education(long studentSn, string formerSchool, string formerYears, string tertiaryEd, string tertiaryYears, string secondaryEd, string secondaryYears, string primaryEd, string primaryYears)
         {
             this.studentSn = studentSn;
             this.formerSchool = formerSchool;
@@ -41,7 +41,7 @@ namespace WestUniversitySystem
             this.primaryYears = primaryYears;
         }
 
-        public string StudentSn
+        public long StudentSn
         {
             get
             {
