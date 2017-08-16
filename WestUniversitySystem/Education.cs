@@ -180,7 +180,7 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Student account registered", "Successful");
+                    MessageBox.Show("Education", "Successful");
                 }
             }
             catch (Exception e)

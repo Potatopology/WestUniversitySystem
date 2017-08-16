@@ -69,7 +69,7 @@ namespace WestUniversitySystem
                 student.Citizenship = txtCitizen.Text;
                 student.Religion = txtReligion.Text;
                 student.Contact = txtContact.Text;
-                
+
                 student.Insert();
 
                 education.StudentSn = studentNum;
@@ -85,8 +85,14 @@ namespace WestUniversitySystem
                 education.Insert();
 
                 requirement.StudentSn = studentNum;
+                requirement.Nsat = Convert.ToInt16(chkNsat.Checked);
+                requirement.Form137 = Convert.ToInt16(chk137.Checked);
+                requirement.TransferCred = Convert.ToInt16(chkTransfer.Checked);
+                requirement.Tor = Convert.ToInt16(chkTor.Checked);
+                requirement.Gmc = Convert.ToInt16(chkGmc.Checked);
+                requirement.BirthCert = Convert.ToInt16(chkBirth.Checked);
 
-
+                requirement.Insert();
 
             }
             catch (Exception e)

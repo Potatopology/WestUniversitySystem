@@ -128,7 +128,7 @@ namespace WestUniversitySystem
         public void Insert()
         {
             string query = "INSERT INTO `requirements` (`ID`, `StudentSN`, `NSAT`, `Form137`, `TransferCred`, `TOR`, `GMC`, `BirthCert`) VALUES "
-                + "(NULL, @StudentSN, , @NSAT, @Form137, @TransferCred, @TOR, @GMC, @BirthCert);";
+                + "(NULL, @StudentSN, @NSAT, @Form137, @TransferCred, @TOR, @GMC, @BirthCert);";
 
             try
             {
