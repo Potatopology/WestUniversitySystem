@@ -275,50 +275,6 @@ namespace WestUniversitySystem
             }
         }
         
-        public void Insert()
-        {
-            string query = "INSERT INTO student_info (SN, Password, EntryDate, Level, Status,"
-                + " CourseCode, Major, LastName, FirstName, MiddleName,"
-                + " Address, Sex, BirthDate, BirthPlace, Citizenship, Religion, ContactNo)"
-                + " VALUES"
-                + " (@SN, @Password, @EntryDate, @Level, @Status, @CourseCode, @Major, @LastName, @FirstName, @MiddleName, @Address, @Sex, @BirthDate, @BirthPlace, @Citizenship, @Religion, @ContactNo);";
-
-            try
-            {
-                using (MySqlConnection myConn = new MySqlConnection(connection))
-                using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
-                {
-                    myCommand.Parameters.AddWithValue("@SN", this.Sn.ToString());
-                    myCommand.Parameters.AddWithValue("@Password", this.Password.ToString());
-                    myCommand.Parameters.AddWithValue("@EntryDate", this.EntryDate.ToString());
-                    myCommand.Parameters.AddWithValue("@Level", this.Level.ToString());
-                    myCommand.Parameters.AddWithValue("@Status", this.Status.ToString());
-                    myCommand.Parameters.AddWithValue("@CourseCode", this.Course.ToString());
-                    myCommand.Parameters.AddWithValue("@Major", this.Major.ToString());
-                    myCommand.Parameters.AddWithValue("@LastName", this.LastName.ToString());
-                    myCommand.Parameters.AddWithValue("@FirstName", this.FirstName.ToString());
-                    myCommand.Parameters.AddWithValue("@MiddleName", this.MiddleName.ToString());
-                    myCommand.Parameters.AddWithValue("@Address", this.Address.ToString());
-                    myCommand.Parameters.AddWithValue("@Sex", this.Sex.ToString());
-                    myCommand.Parameters.AddWithValue("@BirthDate", this.Bday.ToString());
-                    myCommand.Parameters.AddWithValue("@BirthPlace", this.Bplace.ToString());
-                    myCommand.Parameters.AddWithValue("@Citizenship", this.Citizenship.ToString());
-                    myCommand.Parameters.AddWithValue("@Religion", this.Religion.ToString());
-                    myCommand.Parameters.AddWithValue("@ContactNo", this.Contact.ToString());
-
-                    myCommand.CommandTimeout = 60;
-                    myConn.Open();
-                    int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Student account registered", "Successful");
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-
-        }
-
         public override string ToString()
         {
             return "SN: " + this.Sn.ToString() + "\n"
@@ -390,7 +346,49 @@ namespace WestUniversitySystem
             return sn;
         }
 
+        public void Insert()
+        {
+            string query = "INSERT INTO student_info (SN, Password, EntryDate, Level, Status,"
+                + " CourseCode, Major, LastName, FirstName, MiddleName,"
+                + " Address, Sex, BirthDate, BirthPlace, Citizenship, Religion, ContactNo)"
+                + " VALUES"
+                + " (@SN, @Password, @EntryDate, @Level, @Status, @CourseCode, @Major, @LastName, @FirstName, @MiddleName, @Address, @Sex, @BirthDate, @BirthPlace, @Citizenship, @Religion, @ContactNo);";
 
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
+                {
+                    myCommand.Parameters.AddWithValue("@SN", this.Sn.ToString());
+                    myCommand.Parameters.AddWithValue("@Password", this.Password.ToString());
+                    myCommand.Parameters.AddWithValue("@EntryDate", this.EntryDate.ToString());
+                    myCommand.Parameters.AddWithValue("@Level", this.Level.ToString());
+                    myCommand.Parameters.AddWithValue("@Status", this.Status.ToString());
+                    myCommand.Parameters.AddWithValue("@CourseCode", this.Course.ToString());
+                    myCommand.Parameters.AddWithValue("@Major", this.Major.ToString());
+                    myCommand.Parameters.AddWithValue("@LastName", this.LastName.ToString());
+                    myCommand.Parameters.AddWithValue("@FirstName", this.FirstName.ToString());
+                    myCommand.Parameters.AddWithValue("@MiddleName", this.MiddleName.ToString());
+                    myCommand.Parameters.AddWithValue("@Address", this.Address.ToString());
+                    myCommand.Parameters.AddWithValue("@Sex", this.Sex.ToString());
+                    myCommand.Parameters.AddWithValue("@BirthDate", this.Bday.ToString());
+                    myCommand.Parameters.AddWithValue("@BirthPlace", this.Bplace.ToString());
+                    myCommand.Parameters.AddWithValue("@Citizenship", this.Citizenship.ToString());
+                    myCommand.Parameters.AddWithValue("@Religion", this.Religion.ToString());
+                    myCommand.Parameters.AddWithValue("@ContactNo", this.Contact.ToString());
+
+                    myCommand.CommandTimeout = 60;
+                    myConn.Open();
+                    int affectedRows = myCommand.ExecuteNonQuery();
+                    MessageBox.Show("Student account registered", "Successful");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
 
 
 
