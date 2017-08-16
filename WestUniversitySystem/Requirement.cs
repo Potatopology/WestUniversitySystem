@@ -155,5 +155,36 @@ namespace WestUniversitySystem
             }
 
         }
+
+        public void Update()
+        {
+            string query = "UPDATE `requirements` SET `NSAT` = @NSAT, `Form137` = @Form137, `TransferCred` = @TransferCred, "
+                + "`TOR` = @TOR, `GMC` = @GMC, `BirthCert` = @BirthCert WHERE `requirements`.`StudentSN` = @StudentSN;";
+
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
+                {
+                    myCommand.Parameters.AddWithValue("@StudentSN", this.StudentSn.ToString());
+                    myCommand.Parameters.AddWithValue("@NSAT", this.Nsat.ToString());
+                    myCommand.Parameters.AddWithValue("@Form137", this.Form137.ToString());
+                    myCommand.Parameters.AddWithValue("@TransferCred", this.TransferCred.ToString());
+                    myCommand.Parameters.AddWithValue("@TOR", this.Tor.ToString());
+                    myCommand.Parameters.AddWithValue("@GMC", this.Gmc.ToString());
+                    myCommand.Parameters.AddWithValue("@BirthCert", this.BirthCert.ToString());
+
+                    myCommand.CommandTimeout = 60;
+                    myConn.Open();
+                    int affectedRows = myCommand.ExecuteNonQuery();
+                    MessageBox.Show("Requirements", "Successful");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
     }
 }

@@ -187,8 +187,10 @@ namespace WestUniversitySystem
 
         public void Insert()
         {
-            string query = "INSERT INTO `family_info` (`ID`, `StudentSN`, `DadName`, `DadJob`, `DadNum`, `MomName`, `MomJob`, `MomNum`, `GuardName`, `Relation`, `GuardNum`, `ParentAdd`) VALUES "
-                + "(NULL, @StudentSn, @DadName, @DadJob, @DadNum, @MomName, @MomJob, @MomNum, @GuardName, @Relation, @GuardNum, @ParentAdd);";
+            string query = "UPDATE `family_info` SET `DadName` = @DadName, `DadJob` = @DadJob, "
+                + "`DadNum` = @DadNum, `MomName` = @MomName, `MomJob` = @MomJob, "
+                + "`MomNum` = @MomNum, `GuardName` = @GuardName, `Relation` = @Relation, "
+                + "`GuardNum` = @GuardNum, `ParentAdd` = @ParentAdd WHERE `family_info`.`StudentSN` = @StudentSN;";
 
             try
             {

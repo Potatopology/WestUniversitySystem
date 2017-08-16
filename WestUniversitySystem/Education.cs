@@ -189,6 +189,40 @@ namespace WestUniversitySystem
             }
 
         }
+
+        public void Update()
+        {
+            string query = "UPDATE `educational_background` SET `FormerSchool` = @FormerSchool, "
+                + "`FormerYears` = @FormerYears, `TertiaryEd` = @TertiaryEd, `TertiaryYears` = @TertiaryYears, "
+                + "`SecondaryEd` = 'SOCO', `SecondaryYears` = @SecondaryYears, `PrimaryEd` = @PrimaryEd, "
+                + "`PrimaryYears` = @PrimaryYears WHERE `educational_background`.`StudentSN` = @StudentSN;";
+
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
+                {
+                    myCommand.Parameters.AddWithValue("@StudentSN", this.StudentSn.ToString());
+                    myCommand.Parameters.AddWithValue("@FormerSchool", this.FormerSchool.ToString());
+                    myCommand.Parameters.AddWithValue("@FormerYears", this.FormerYears.ToString());
+                    myCommand.Parameters.AddWithValue("@TertiaryEd", this.TertiaryEd.ToString());
+                    myCommand.Parameters.AddWithValue("@TertiaryYears", this.TertiaryYears.ToString());
+                    myCommand.Parameters.AddWithValue("@SecondaryEd", this.SecondaryEd.ToString());
+                    myCommand.Parameters.AddWithValue("@SecondaryYears", this.SecondaryYears.ToString());
+                    myCommand.Parameters.AddWithValue("@PrimaryEd", this.PrimaryEd.ToString());
+                    myCommand.Parameters.AddWithValue("@PrimaryYears", this.PrimaryYears.ToString());
+                    myCommand.CommandTimeout = 60;
+                    myConn.Open();
+                    int affectedRows = myCommand.ExecuteNonQuery();
+                    MessageBox.Show("Education", "Successful");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
     }
 
     
