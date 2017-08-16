@@ -161,14 +161,14 @@ namespace WestUniversitySystem
         public void Insert()
         {
             string query = "INSERT INTO `educational_background` (`ID`, `StudentSN`, `FormerSchool`, `FormerYears`, `TertiaryEd`, `TertiaryYears`, `SecondaryEd`, `SecondaryYears`, `PrimaryEd`, `PrimaryYears`) VALUES "
-                + " (NULL, @Student_SN, @FormerSchool, @FormerYears, @TertiaryEd, @TertiaryYears, @SecondaryEd, @SecondaryYears, @PrimaryEd, @PrimaryYears);";
+                + " (NULL, @StudentSN, @FormerSchool, @FormerYears, @TertiaryEd, @TertiaryYears, @SecondaryEd, @SecondaryYears, @PrimaryEd, @PrimaryYears);";
 
             try
             {
                 using (MySqlConnection myConn = new MySqlConnection(connection))
                 using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
                 {
-                    myCommand.Parameters.AddWithValue("@Student_SN", this.StudentSn.ToString());
+                    myCommand.Parameters.AddWithValue("@StudentSN", this.StudentSn.ToString());
                     myCommand.Parameters.AddWithValue("@FormerSchool", this.FormerSchool.ToString());
                     myCommand.Parameters.AddWithValue("@FormerYears", this.FormerYears.ToString());
                     myCommand.Parameters.AddWithValue("@TertiaryEd", this.TertiaryEd.ToString());

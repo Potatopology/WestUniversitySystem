@@ -93,7 +93,7 @@ namespace WestUniversitySystem
                 requirement.BirthCert = Convert.ToInt16(chkBirth.Checked);
 
                 requirement.Insert();
-
+                
             }
             catch (Exception e)
             {
