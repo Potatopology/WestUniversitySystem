@@ -23,6 +23,7 @@ namespace WestUniversitySystem
         Student student = new Student();
         Education education = new Education();
         Requirement requirement = new Requirement();
+        Family family = new Family();
 
         public FormStudentAccount()
         {
@@ -93,7 +94,20 @@ namespace WestUniversitySystem
                 requirement.BirthCert = Convert.ToInt16(chkBirth.Checked);
 
                 requirement.Insert();
-                
+
+                family.StudentSn = studentNum;
+                family.DadName = txtDadName.Text;
+                family.DadJob = txtDadJob.Text;
+                family.DadNum = txtDadNum.Text;
+                family.MomName = txtMomName.Text;
+                family.MomJob = txtMomJob.Text;
+                family.MomNum = txtMomNum.Text;
+                family.GuardName = txtGuarName.Text;
+                family.Relation = txtRelation.Text;
+                family.GuardNum = txtGuarNum.Text;
+                family.ParentAdd = txtParentAdd.Text;
+
+                family.Insert();
             }
             catch (Exception e)
             {
