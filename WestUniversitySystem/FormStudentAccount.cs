@@ -22,6 +22,7 @@ namespace WestUniversitySystem
 
         Student student = new Student();
         Education education = new Education();
+        Requirement requirement = new Requirement();
 
         public FormStudentAccount()
         {
@@ -82,6 +83,11 @@ namespace WestUniversitySystem
                 education.PrimaryYears = txtPrimaryYear.Text;
 
                 education.Insert();
+
+                requirement.StudentSn = studentNum;
+
+
+
             }
             catch (Exception e)
             {
