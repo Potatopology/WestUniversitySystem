@@ -247,6 +247,41 @@ namespace WestUniversitySystem
             }
 
         }
+
+        public void LoadValues(long studNum)
+        {
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                {
+                    myConn.Open();
+                    string query = "SELECT * FROM educational_background WHERE StudentSN = " + studNum + ";";
+                    using (MySqlCommand command = new MySqlCommand(query, myConn))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                this.studentSn = reader.GetInt32(1);
+                                this.formerSchool = reader.GetString(1);
+                                this.formerYears = reader.GetString(1);
+                                this.tertiaryEd = reader.GetString(1);
+                                this.tertiaryYears = reader.GetString(1);
+                                this.secondaryEd = reader.GetString(1);
+                                this.secondaryYears = reader.GetString(1);
+                                this.primaryEd = reader.GetString(1);
+                                this.primaryYears = reader.GetString(1);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
     }
 
     

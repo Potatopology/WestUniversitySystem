@@ -458,6 +458,46 @@ namespace WestUniversitySystem
 
         }
 
-         
+        public void LoadValues(long studNum)
+        {
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                {
+                    myConn.Open();
+                    string query = "SELECT * FROM student_info WHERE SN = " + studNum + ";";
+                    using (MySqlCommand command = new MySqlCommand(query, myConn))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                this.Sn = reader.GetInt32(1);
+                                this.Password = reader.GetString(2);
+                                this.EntryDate = reader.GetString(2);
+                                this.Level = reader.GetInt32(1);
+                                this.Status = reader.GetString(2);
+                                this.Course = reader.GetString(2);
+                                this.Major = reader.GetString(2);
+                                this.LastName = reader.GetString(2);
+                                this.FirstName = reader.GetString(2);
+                                this.MiddleName = reader.GetString(2);
+                                this.Address = reader.GetString(2);
+                                this.Sex = reader.GetString(2);
+                                this.Bday = reader.GetString(2);
+                                this.Bplace = reader.GetString(2);
+                                this.Citizenship = reader.GetString(2);
+                                this.Religion = reader.GetString(2);
+                                this.Contact = reader.GetString(2);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
     }
 }

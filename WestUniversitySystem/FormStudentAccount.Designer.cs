@@ -104,20 +104,34 @@
             this.label27 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.txtChosen = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnFinish = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.txtSearch);
+            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(830, 60);
+            this.panel1.Size = new System.Drawing.Size(1250, 60);
             this.panel1.TabIndex = 1;
             // 
             // lblName
@@ -147,7 +161,7 @@
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Location = new System.Drawing.Point(772, 15);
+            this.btnLogout.Location = new System.Drawing.Point(1202, 15);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(30, 30);
             this.btnLogout.TabIndex = 1;
@@ -770,12 +784,142 @@
             this.label30.TabIndex = 72;
             this.label30.Text = "Temp. Password";
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(962, 75);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(160, 18);
+            this.label31.TabIndex = 74;
+            this.label31.Text = "Educational Background";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(840, 60);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 600);
+            this.panel2.TabIndex = 75;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(882, 106);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(329, 458);
+            this.dataGridView1.TabIndex = 76;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(1065, 597);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(70, 36);
+            this.btnEdit.TabIndex = 77;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(1141, 597);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(70, 36);
+            this.btnDelete.TabIndex = 78;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // txtChosen
+            // 
+            this.txtChosen.Enabled = false;
+            this.txtChosen.Location = new System.Drawing.Point(910, 603);
+            this.txtChosen.Name = "txtChosen";
+            this.txtChosen.Size = new System.Drawing.Size(149, 25);
+            this.txtChosen.TabIndex = 79;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(417, 597);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(174, 36);
+            this.btnCancel.TabIndex = 80;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // btnFinish
+            // 
+            this.btnFinish.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnFinish.FlatAppearance.BorderSize = 0;
+            this.btnFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinish.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinish.ForeColor = System.Drawing.Color.White;
+            this.btnFinish.Location = new System.Drawing.Point(237, 597);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(174, 36);
+            this.btnFinish.TabIndex = 81;
+            this.btnFinish.Text = "FINISH EDIT";
+            this.btnFinish.UseVisualStyleBackColor = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(879, 606);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(25, 18);
+            this.label32.TabIndex = 82;
+            this.label32.Text = "SN";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::WestUniversitySystem.Properties.Resources.icons8_Search_64_white;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(731, 15);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(30, 30);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(525, 18);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(200, 25);
+            this.txtSearch.TabIndex = 83;
+            // 
             // FormStudentAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(824, 660);
+            this.ClientSize = new System.Drawing.Size(1244, 661);
+            this.Controls.Add(this.btnCreate);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.btnFinish);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.txtChosen);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label31);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.txtParentAdd);
@@ -797,7 +941,6 @@
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
@@ -854,6 +997,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -936,5 +1080,16 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TextBox txtChosen;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnFinish;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
