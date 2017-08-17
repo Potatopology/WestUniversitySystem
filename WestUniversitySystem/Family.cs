@@ -187,6 +187,41 @@ namespace WestUniversitySystem
 
         public void Insert()
         {
+            string query = "INSERT INTO `family_info` (`ID`, `StudentSN`, `DadName`, `DadJob`, `DadNum`, `MomName`, `MomJob`, `MomNum`, `GuardName`, `Relation`, `GuardNum`, `ParentAdd`) VALUES "
+                + "(NULL, @StudentSn, @DadName, @DadJob, @DadNum, @MomName, @MomJob, @MomNum, @GuardName, @Relation, @GuardNum, @ParentAdd);";
+
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
+                {
+                    myCommand.Parameters.AddWithValue("@StudentSN", this.StudentSn.ToString());
+                    myCommand.Parameters.AddWithValue("@DadName", this.DadName.ToString());
+                    myCommand.Parameters.AddWithValue("@DadJob", this.DadJob.ToString());
+                    myCommand.Parameters.AddWithValue("@DadNum", this.DadNum.ToString());
+                    myCommand.Parameters.AddWithValue("@MomName", this.MomName.ToString());
+                    myCommand.Parameters.AddWithValue("@MomJob", this.MomJob.ToString());
+                    myCommand.Parameters.AddWithValue("@MomNum", this.MomNum.ToString());
+                    myCommand.Parameters.AddWithValue("@GuardName", this.GuardName.ToString());
+                    myCommand.Parameters.AddWithValue("@Relation", this.Relation.ToString());
+                    myCommand.Parameters.AddWithValue("@GuardNum", this.GuardNum.ToString());
+                    myCommand.Parameters.AddWithValue("@ParentAdd", this.ParentAdd.ToString());
+
+                    myCommand.CommandTimeout = 60;
+                    myConn.Open();
+                    int affectedRows = myCommand.ExecuteNonQuery();
+                    MessageBox.Show("Family", "Successful");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
+
+        public void Update()
+        {
             string query = "UPDATE `family_info` SET `DadName` = @DadName, `DadJob` = @DadJob, "
                 + "`DadNum` = @DadNum, `MomName` = @MomName, `MomJob` = @MomJob, "
                 + "`MomNum` = @MomNum, `GuardName` = @GuardName, `Relation` = @Relation, "
@@ -213,6 +248,30 @@ namespace WestUniversitySystem
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
                     MessageBox.Show("Family", "Successful");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
+
+        public void Delete()
+        {
+            string query = "DELETE FROM `family_info` WHERE `family_info`.`StudentSN` = @StudentSN;";
+
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
+                {
+                    myCommand.Parameters.AddWithValue("@StudentSN", this.StudentSn.ToString());
+
+                    myCommand.CommandTimeout = 60;
+                    myConn.Open();
+                    int affectedRows = myCommand.ExecuteNonQuery();
+                    MessageBox.Show("Deleted Family", "Successful");
                 }
             }
             catch (Exception e)

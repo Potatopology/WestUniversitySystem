@@ -434,5 +434,30 @@ namespace WestUniversitySystem
 
         }
 
+        public void Delete()
+        {
+            string query = "DELETE FROM `student_info` WHERE `student_info`.`SN` = @SN";
+
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
+                {
+                    myCommand.Parameters.AddWithValue("@SN", this.Sn.ToString());
+
+                    myCommand.CommandTimeout = 60;
+                    myConn.Open();
+                    int affectedRows = myCommand.ExecuteNonQuery();
+                    MessageBox.Show("Deleted", "Successful");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
+
+         
     }
 }

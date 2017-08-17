@@ -186,5 +186,29 @@ namespace WestUniversitySystem
             }
 
         }
+
+        public void Delete()
+        {
+            string query = "DELETE FROM `requirements` WHERE `requirements`.`StudentSN` = @StudentSN;";
+
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
+                {
+                    myCommand.Parameters.AddWithValue("@StudentSN", this.StudentSn.ToString());
+
+                    myCommand.CommandTimeout = 60;
+                    myConn.Open();
+                    int affectedRows = myCommand.ExecuteNonQuery();
+                    MessageBox.Show("Deleted Requirements", "Successful");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
     }
 }
