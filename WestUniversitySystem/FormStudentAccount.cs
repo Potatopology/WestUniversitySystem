@@ -32,12 +32,39 @@ namespace WestUniversitySystem
 
         private void FormStudentAccount_Load(object sender, EventArgs e)
         {
-            lblName.Text = Nm;
+            Startup();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            Insert();
+            ValidateInsert();
+            ClearForms();
+            Startup();
+        }
+        
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -48,9 +75,7 @@ namespace WestUniversitySystem
             this.Close();
         }
 
-
-
-        //---
+        //---------------------------------CRUD Methods---------------------------------
         private void AssignValues()
         {
             long studentNum = Student.ValidateSN(2017);
@@ -167,6 +192,7 @@ namespace WestUniversitySystem
             txtMiddle.Text = student.MiddleName;
             txtLast.Text = student.LastName;
             txtLevel.Text = student.Level.ToString();
+            cmbStatus.Text = student.Status;
             txtCourse.Text = student.Course;
             txtMajor.Text = student.Major;
             txtAddress.Text = student.Address;
@@ -204,6 +230,82 @@ namespace WestUniversitySystem
             txtRelation.Text = family.Relation;
             txtGuarNum.Text = family.GuardNum;
             txtParentAdd.Text = family.ParentAdd;
+        }
+
+        //---------------------------------UI Methods---------------------------------
+        private void Startup()
+        {
+            lblName.Text = Nm;
+            btnFinish.Visible = false;
+            btnCancel.Visible = false;
+            cmbStatus.SelectedIndex = 0;
+            cmbSex.SelectedIndex = 0;
+        }
+
+        private void ClearForms()
+        {
+            txtFirst.Text = "";
+            txtMiddle.Text = "";
+            txtLast.Text = "";
+            txtLevel.Text = "";
+            cmbStatus.SelectedIndex = 0;
+            txtCourse.Text = "";
+            txtMajor.Text = "";
+            txtAddress.Text = "";
+            cmbSex.SelectedIndex = 0;
+            dtpBday.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"); ;
+            txtBplace.Text = "";
+            txtCitizen.Text = "";
+            txtReligion.Text = "";
+            txtContact.Text = "";
+            txtPassword.Text = "";
+
+            txtFormer.Text = "";
+            txtFormerYear.Text = "";
+            txtTertiary.Text = "";
+            txtTertiaryYear.Text = "";
+            txtSecondary.Text = "";
+            txtSecondaryYear.Text = "";
+            txtPrimary.Text = "";
+            txtPrimaryYear.Text = "";
+
+            chkNsat.Checked = false;
+            chk137.Checked = false;
+            chkTransfer.Checked = false;
+            chkTor.Checked = false;
+            chkGmc.Checked = false;
+            chkBirth.Checked = false;
+
+            txtDadName.Text = "";
+            txtDadJob.Text = "";
+            txtDadNum.Text = "";
+            txtMomName.Text = "";
+            txtMomJob.Text = "";
+            txtMomNum.Text = "";
+            txtGuarName.Text = "";
+            txtRelation.Text = "";
+            txtGuarNum.Text = "";
+            txtParentAdd.Text = "";
+        }
+
+        //---------------------------------Control Methods---------------------------------
+        private void ValidateInsert()
+        {
+            if (txtFirst.Text == "" || txtMiddle.Text == "" || txtLast.Text == "" || txtLevel.Text == ""
+                || txtCourse.Text == "" || txtMajor.Text == "" || txtAddress.Text == "" || txtBplace.Text == ""
+                || txtCitizen.Text == "" || txtReligion.Text == "" || txtContact.Text == "" || txtPassword.Text == ""
+                || txtFormer.Text == "" || txtFormerYear.Text == "" || txtTertiary.Text == "" || txtTertiaryYear.Text == ""
+                || txtSecondary.Text == "" || txtSecondaryYear.Text == "" || txtPrimary.Text == "" || txtPrimaryYear.Text == ""
+                || txtDadName.Text == "" || txtDadJob.Text == "" || txtDadNum.Text == ""
+                || txtMomName.Text == "" || txtMomJob.Text == "" || txtMomNum.Text == ""
+                || txtGuarName.Text == "" || txtRelation.Text == "" || txtGuarNum.Text == ""|| txtParentAdd.Text == "")
+            {
+                MessageBox.Show("Please fill-indexer all required information.");
+            }
+            else
+            {
+                Insert();
+            }
         }
     }
 }

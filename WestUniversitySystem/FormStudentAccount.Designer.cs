@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudentAccount));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -106,19 +108,17 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvStudent = new System.Windows.Forms.DataGridView();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtChosen = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnFinish = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -133,6 +133,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1250, 60);
             this.panel1.TabIndex = 1;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(525, 18);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(200, 25);
+            this.txtSearch.TabIndex = 83;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::WestUniversitySystem.Properties.Resources.icons8_Search_64_white;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(731, 15);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(30, 30);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblName
             // 
@@ -788,11 +808,11 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(962, 75);
+            this.label31.Location = new System.Drawing.Point(1012, 75);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(160, 18);
+            this.label31.Size = new System.Drawing.Size(81, 18);
             this.label31.TabIndex = 74;
-            this.label31.Text = "Educational Background";
+            this.label31.Text = "Student List";
             // 
             // panel2
             // 
@@ -803,13 +823,14 @@
             this.panel2.Size = new System.Drawing.Size(1, 600);
             this.panel2.TabIndex = 75;
             // 
-            // dataGridView1
+            // dgvStudent
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(882, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(329, 458);
-            this.dataGridView1.TabIndex = 76;
+            this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudent.Location = new System.Drawing.Point(882, 106);
+            this.dgvStudent.Name = "dgvStudent";
+            this.dgvStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStudent.Size = new System.Drawing.Size(329, 458);
+            this.dgvStudent.TabIndex = 76;
             // 
             // btnEdit
             // 
@@ -824,6 +845,7 @@
             this.btnEdit.TabIndex = 77;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -838,6 +860,7 @@
             this.btnDelete.TabIndex = 78;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtChosen
             // 
@@ -860,6 +883,7 @@
             this.btnCancel.TabIndex = 80;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnFinish
             // 
@@ -874,6 +898,7 @@
             this.btnFinish.TabIndex = 81;
             this.btnFinish.Text = "FINISH EDIT";
             this.btnFinish.UseVisualStyleBackColor = false;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // label32
             // 
@@ -884,25 +909,6 @@
             this.label32.Size = new System.Drawing.Size(25, 18);
             this.label32.TabIndex = 82;
             this.label32.Text = "SN";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = global::WestUniversitySystem.Properties.Resources.icons8_Search_64_white;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(731, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(30, 30);
-            this.btnSearch.TabIndex = 4;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(525, 18);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(200, 25);
-            this.txtSearch.TabIndex = 83;
             // 
             // FormStudentAccount
             // 
@@ -917,7 +923,7 @@
             this.Controls.Add(this.txtChosen);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvStudent);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.txtPassword);
@@ -997,7 +1003,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1082,7 +1088,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvStudent;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtChosen;

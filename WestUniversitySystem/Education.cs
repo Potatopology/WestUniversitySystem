@@ -262,15 +262,15 @@ namespace WestUniversitySystem
                         {
                             while (reader.Read())
                             {
-                                this.studentSn = reader.GetInt32(1);
-                                this.formerSchool = reader.GetString(1);
-                                this.formerYears = reader.GetString(1);
-                                this.tertiaryEd = reader.GetString(1);
-                                this.tertiaryYears = reader.GetString(1);
-                                this.secondaryEd = reader.GetString(1);
-                                this.secondaryYears = reader.GetString(1);
-                                this.primaryEd = reader.GetString(1);
-                                this.primaryYears = reader.GetString(1);
+                                this.studentSn = reader.GetInt32(2);
+                                this.formerSchool = reader.GetString(3);
+                                this.formerYears = reader.GetString(4);
+                                this.tertiaryEd = reader.GetString(5);
+                                this.tertiaryYears = reader.GetString(6);
+                                this.secondaryEd = reader.GetString(7);
+                                this.secondaryYears = reader.GetString(8);
+                                this.primaryEd = reader.GetString(9);
+                                this.primaryYears = reader.GetString(10);
                             }
                         }
                     }

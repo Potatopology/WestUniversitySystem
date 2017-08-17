@@ -474,21 +474,21 @@ namespace WestUniversitySystem
                             {
                                 this.Sn = reader.GetInt32(1);
                                 this.Password = reader.GetString(2);
-                                this.EntryDate = reader.GetString(2);
-                                this.Level = reader.GetInt32(1);
-                                this.Status = reader.GetString(2);
-                                this.Course = reader.GetString(2);
-                                this.Major = reader.GetString(2);
-                                this.LastName = reader.GetString(2);
-                                this.FirstName = reader.GetString(2);
-                                this.MiddleName = reader.GetString(2);
-                                this.Address = reader.GetString(2);
-                                this.Sex = reader.GetString(2);
-                                this.Bday = reader.GetString(2);
-                                this.Bplace = reader.GetString(2);
-                                this.Citizenship = reader.GetString(2);
-                                this.Religion = reader.GetString(2);
-                                this.Contact = reader.GetString(2);
+                                this.EntryDate = reader.GetString(3);
+                                this.Level = reader.GetInt32(4);
+                                this.Status = reader.GetString(5);
+                                this.Course = reader.GetString(6);
+                                this.Major = reader.GetString(7);
+                                this.LastName = reader.GetString(8);
+                                this.FirstName = reader.GetString(9);
+                                this.MiddleName = reader.GetString(10);
+                                this.Address = reader.GetString(11);
+                                this.Sex = reader.GetString(12);
+                                this.Bday = reader.GetString(13);
+                                this.Bplace = reader.GetString(14);
+                                this.Citizenship = reader.GetString(15);
+                                this.Religion = reader.GetString(16);
+                                this.Contact = reader.GetString(17);
                             }
                         }
                     }

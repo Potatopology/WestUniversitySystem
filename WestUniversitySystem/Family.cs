@@ -295,17 +295,17 @@ namespace WestUniversitySystem
                         {
                             while (reader.Read())
                             {
-                                this.StudentSn = reader.GetInt32(1);
-                                this.DadName = reader.GetString(1);
-                                this.DadJob = reader.GetString(1);
-                                this.DadNum = reader.GetString(1);
-                                this.MomName = reader.GetString(1);
-                                this.MomJob = reader.GetString(1);
-                                this.MomNum = reader.GetString(1);
-                                this.GuardName = reader.GetString(1);
-                                this.Relation = reader.GetString(1);
-                                this.GuardNum = reader.GetString(1);
-                                this.ParentAdd = reader.GetString(1);
+                                this.StudentSn = reader.GetInt32(2);
+                                this.DadName = reader.GetString(3);
+                                this.DadJob = reader.GetString(4);
+                                this.DadNum = reader.GetString(5);
+                                this.MomName = reader.GetString(6);
+                                this.MomJob = reader.GetString(7);
+                                this.MomNum = reader.GetString(8);
+                                this.GuardName = reader.GetString(9);
+                                this.Relation = reader.GetString(10);
+                                this.GuardNum = reader.GetString(11);
+                                this.ParentAdd = reader.GetString(12);
                             }
                         }
                     }

@@ -225,13 +225,13 @@ namespace WestUniversitySystem
                         {
                             while (reader.Read())
                             {
-                                this.StudentSn = reader.GetInt32(1);
-                                this.Nsat = reader.GetInt32(1);
-                                this.Form137 = reader.GetInt32(1);
-                                this.TransferCred = reader.GetInt32(1);
-                                this.Tor = reader.GetInt32(1);
-                                this.Gmc = reader.GetInt32(1);
-                                this.BirthCert = reader.GetInt32(1);
+                                this.StudentSn = reader.GetInt32(2);
+                                this.Nsat = reader.GetInt32(3);
+                                this.Form137 = reader.GetInt32(4);
+                                this.TransferCred = reader.GetInt32(5);
+                                this.Tor = reader.GetInt32(6);
+                                this.Gmc = reader.GetInt32(7);
+                                this.BirthCert = reader.GetInt32(8);
                             }
                         }
                     }
