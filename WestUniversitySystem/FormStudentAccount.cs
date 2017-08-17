@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Configuration;
+
 
 namespace WestUniversitySystem
 {
@@ -19,6 +22,7 @@ namespace WestUniversitySystem
             get { return Nm; }
             set { Nm = value; }
         }
+        static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
         Student student = new Student();
         Education education = new Education();
@@ -38,13 +42,15 @@ namespace WestUniversitySystem
         private void btnCreate_Click(object sender, EventArgs e)
         {
             ValidateInsert();
-            ClearForms();
-            Startup();
         }
         
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            LoadValues(Convert.ToInt64(txtChosen.Text));
+            SetToForm();
+            btnCreate.Visible = false;
+            btnFinish.Visible = true;
+            btnCancel.Visible = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -73,6 +79,16 @@ namespace WestUniversitySystem
             form.Passvalue = Nm;
             form.Show();
             this.Close();
+        }
+
+        private void dgvStudent_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvStudent.Rows[e.RowIndex];
+
+                txtChosen.Text = row.Cells["SN"].Value.ToString();
+            }
         }
 
         //---------------------------------CRUD Methods---------------------------------
@@ -240,6 +256,7 @@ namespace WestUniversitySystem
             btnCancel.Visible = false;
             cmbStatus.SelectedIndex = 0;
             cmbSex.SelectedIndex = 0;
+            DisplayInGrid();
         }
 
         private void ClearForms()
@@ -288,6 +305,42 @@ namespace WestUniversitySystem
             txtParentAdd.Text = "";
         }
 
+        private void DisplayInGrid()
+        {
+            this.dgvStudent.DataSource = null;
+            this.dgvStudent.Rows.Clear();
+
+            String query = "select * from enroldb.student_info;";
+            MySqlConnection conDB = new MySqlConnection(connection);
+            MySqlCommand cmdDB = new MySqlCommand(query, conDB);
+
+            try
+            {
+                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+                MyAdapter.SelectCommand = cmdDB;
+                DataTable dTable = new DataTable();
+                MyAdapter.Fill(dTable);
+                BindingSource bSource = new BindingSource();
+
+                bSource.DataSource = dTable;
+                dgvStudent.DataSource = bSource;
+                MyAdapter.Update(dTable);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ShowDeleteDialog()
+        {
+            DialogResult dialogResult = MessageBox.Show("You are about to delete, confirm?", "Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //TODO
+            }
+        }
+
         //---------------------------------Control Methods---------------------------------
         private void ValidateInsert()
         {
@@ -300,12 +353,16 @@ namespace WestUniversitySystem
                 || txtMomName.Text == "" || txtMomJob.Text == "" || txtMomNum.Text == ""
                 || txtGuarName.Text == "" || txtRelation.Text == "" || txtGuarNum.Text == ""|| txtParentAdd.Text == "")
             {
-                MessageBox.Show("Please fill-indexer all required information.");
+                MessageBox.Show("Please fill-in all required information.");
             }
             else
             {
                 Insert();
+                ClearForms();
+                Startup();
             }
         }
+
+        
     }
 }
