@@ -210,5 +210,37 @@ namespace WestUniversitySystem
             }
 
         }
+
+        public void LoadValues(long studNum)
+        {
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                {
+                    myConn.Open();
+                    string query = "SELECT * FROM requirements WHERE StudentSN = " + studNum + ";";
+                    using (MySqlCommand command = new MySqlCommand(query, myConn))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                this.StudentSn = reader.GetInt32(1);
+                                this.Nsat = reader.GetInt32(1);
+                                this.Form137 = reader.GetInt32(1);
+                                this.TransferCred = reader.GetInt32(1);
+                                this.Tor = reader.GetInt32(1);
+                                this.Gmc = reader.GetInt32(1);
+                                this.BirthCert = reader.GetInt32(1);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
     }
 }

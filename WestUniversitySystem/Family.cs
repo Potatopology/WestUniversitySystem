@@ -281,6 +281,40 @@ namespace WestUniversitySystem
 
         }
 
-
+        public void LoadValues(long studNum)
+        {
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                {
+                    myConn.Open();
+                    string query = "SELECT * FROM family_info WHERE StudentSN = " + studNum + ";";
+                    using (MySqlCommand command = new MySqlCommand(query, myConn))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                this.StudentSn = reader.GetInt32(1);
+                                this.DadName = reader.GetString(1);
+                                this.DadJob = reader.GetString(1);
+                                this.DadNum = reader.GetString(1);
+                                this.MomName = reader.GetString(1);
+                                this.MomJob = reader.GetString(1);
+                                this.MomNum = reader.GetString(1);
+                                this.GuardName = reader.GetString(1);
+                                this.Relation = reader.GetString(1);
+                                this.GuardNum = reader.GetString(1);
+                                this.ParentAdd = reader.GetString(1);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
     }
 }
