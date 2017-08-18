@@ -16,18 +16,20 @@ namespace WestUniversitySystem
         private int size;
         private int enrolled;
         private int available;
+        private string status;
 
         static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
         public ClassSection() { }
 
-        public ClassSection(string subject, string section, int size, int enrolled, int available)
+        public ClassSection(string subject, string section, int size, int enrolled, int available, string status)
         {
             this.Subject = subject;
             this.Section = section;
             this.Size = size;
             this.Enrolled = enrolled;
             this.Available = available;
+            this.Status = status;
         }
 
         public string Subject
@@ -95,9 +97,22 @@ namespace WestUniversitySystem
             }
         }
 
+        public string Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
         public void Insert()
         {
-            string query = "INSERT INTO `class` (`ID`, `Subject`, `Section`, `Size`, `Enrolled`, `Available`) VALUES (NULL, @Subject, @Section, @Size, @Enrolled, @Available);";
+            string query = "INSERT INTO `class` (`ID`, `Subject`, `Section`, `Size`, `Enrolled`, `Available`, `Status`) VALUES (NULL, @Subject, @Section, @Size, @Enrolled, @Available, @Status);";
 
             try
             {
@@ -110,10 +125,24 @@ namespace WestUniversitySystem
                     myCommand.Parameters.AddWithValue("@Enrolled", this.Enrolled.ToString());
                     myCommand.Parameters.AddWithValue("@Available", (this.Size - this.Enrolled).ToString());
 
+                    if(this.Status == "Dissolved")
+                    {
+                        myCommand.Parameters.AddWithValue("@Status", this.Status);
+                    }
+                    else if(this.Size - this.Enrolled <= 0)
+                    {
+                        myCommand.Parameters.AddWithValue("@Status", "Closed");
+                    }
+                    else
+                    {
+                        myCommand.Parameters.AddWithValue("@Status", "Open");
+                    }
+                    
+
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Class registered", "Successful");
+                    MessageBox.Show("Class Added", "Successful");
                 }
             }
             catch (Exception e)
@@ -125,7 +154,7 @@ namespace WestUniversitySystem
 
         public void Update()
         {
-            string query = "UPDATE `class` SET `Size`= @Size,`Enrolled`= @Enrolled,`Available`= @Available WHERE `Subject`= @Subject AND `Section`= @Section;";
+            string query = "UPDATE `class` SET `Size`= @Size,`Enrolled`= @Enrolled,`Available`= @Available,`Status`= @Status WHERE `Subject`= @Subject AND `Section`= @Section;";
 
             try
             {
@@ -137,6 +166,19 @@ namespace WestUniversitySystem
                     myCommand.Parameters.AddWithValue("@Size", this.Size.ToString());
                     myCommand.Parameters.AddWithValue("@Enrolled", this.Enrolled.ToString());
                     myCommand.Parameters.AddWithValue("@Available", (this.Size - this.Enrolled).ToString());
+
+                    if (this.Status == "Dissolved")
+                    {
+                        myCommand.Parameters.AddWithValue("@Status", this.Status);
+                    }
+                    else if (this.Size - this.Enrolled <= 0)
+                    {
+                        myCommand.Parameters.AddWithValue("@Status", "Closed");
+                    }
+                    else
+                    {
+                        myCommand.Parameters.AddWithValue("@Status", "Open");
+                    }
 
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
@@ -166,7 +208,7 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Student Info Deleted", "Successful");
+                    MessageBox.Show("Class Deleted", "Successful");
                 }
             }
             catch (Exception e)
@@ -183,7 +225,7 @@ namespace WestUniversitySystem
                 using (MySqlConnection myConn = new MySqlConnection(connection))
                 {
                     myConn.Open();
-                    string query = "SELECT * FROM student_info WHERE `Subject`= " + subj + " AND `Section`= " + sect + ";";
+                    string query = "SELECT * FROM class WHERE `Subject`= '" + subj + "' AND `Section`= '" + sect + "';";
                     using (MySqlCommand command = new MySqlCommand(query, myConn))
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
@@ -195,6 +237,7 @@ namespace WestUniversitySystem
                                 this.Size = reader.GetInt32(3);
                                 this.Enrolled = reader.GetInt32(4);
                                 this.Available = reader.GetInt32(5);
+                                this.Status = reader.GetString(6);
                             }
                         }
                     }

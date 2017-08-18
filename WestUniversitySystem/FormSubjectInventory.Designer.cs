@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSubjectInventory));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -46,16 +48,18 @@
             this.dgvClass = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
-            this.txtChosen = new System.Windows.Forms.TextBox();
+            this.txtChosenSubj = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnFinish = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.txtChosenSect = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).BeginInit();
@@ -73,6 +77,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(830, 60);
             this.panel1.TabIndex = 1;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(297, 20);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(200, 25);
+            this.txtSearch.TabIndex = 90;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::WestUniversitySystem.Properties.Resources.icons8_Search_64_white;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(503, 17);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(30, 30);
+            this.btnSearch.TabIndex = 89;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblName
             // 
@@ -184,6 +208,7 @@
             // 
             // cmbSubject
             // 
+            this.cmbSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSubject.FormattingEnabled = true;
             this.cmbSubject.Location = new System.Drawing.Point(39, 173);
             this.cmbSubject.Name = "cmbSubject";
@@ -201,6 +226,7 @@
             this.dgvClass.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClass.Size = new System.Drawing.Size(342, 215);
             this.dgvClass.TabIndex = 77;
+            this.dgvClass.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClass_CellClick);
             // 
             // panel2
             // 
@@ -215,19 +241,19 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(452, 389);
+            this.label32.Location = new System.Drawing.Point(465, 365);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(22, 18);
+            this.label32.Size = new System.Drawing.Size(53, 18);
             this.label32.TabIndex = 86;
-            this.label32.Text = "ID";
+            this.label32.Text = "Subject";
             // 
-            // txtChosen
+            // txtChosenSubj
             // 
-            this.txtChosen.Enabled = false;
-            this.txtChosen.Location = new System.Drawing.Point(480, 386);
-            this.txtChosen.Name = "txtChosen";
-            this.txtChosen.Size = new System.Drawing.Size(149, 25);
-            this.txtChosen.TabIndex = 85;
+            this.txtChosenSubj.Enabled = false;
+            this.txtChosenSubj.Location = new System.Drawing.Point(449, 386);
+            this.txtChosenSubj.Name = "txtChosenSubj";
+            this.txtChosenSubj.Size = new System.Drawing.Size(84, 25);
+            this.txtChosenSubj.TabIndex = 85;
             // 
             // btnDelete
             // 
@@ -265,9 +291,9 @@
             this.label31.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(180, 96);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(53, 18);
+            this.label31.Size = new System.Drawing.Size(40, 18);
             this.label31.TabIndex = 87;
-            this.label31.Text = "Subject";
+            this.label31.Text = "Class";
             // 
             // label6
             // 
@@ -278,26 +304,6 @@
             this.label6.Size = new System.Drawing.Size(65, 18);
             this.label6.TabIndex = 88;
             this.label6.Text = "Class List";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(297, 20);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(200, 25);
-            this.txtSearch.TabIndex = 90;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = global::WestUniversitySystem.Properties.Resources.icons8_Search_64_white;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(503, 17);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(30, 30);
-            this.btnSearch.TabIndex = 89;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnCreate
             // 
@@ -344,19 +350,63 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(223, 278);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 18);
+            this.label7.TabIndex = 92;
+            this.label7.Text = "Status";
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Open",
+            "Closed",
+            "Dissolved"});
+            this.cmbStatus.Location = new System.Drawing.Point(226, 299);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(150, 26);
+            this.cmbStatus.TabIndex = 93;
+            // 
+            // txtChosenSect
+            // 
+            this.txtChosenSect.Enabled = false;
+            this.txtChosenSect.Location = new System.Drawing.Point(539, 386);
+            this.txtChosenSect.Name = "txtChosenSect";
+            this.txtChosenSect.Size = new System.Drawing.Size(84, 25);
+            this.txtChosenSect.TabIndex = 94;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(552, 365);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 18);
+            this.label8.TabIndex = 95;
+            this.label8.Text = "Section";
+            // 
             // FormSubjectInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(824, 441);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtChosenSect);
+            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.label32);
-            this.Controls.Add(this.txtChosen);
+            this.Controls.Add(this.txtChosenSubj);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.panel2);
@@ -407,7 +457,7 @@
         private System.Windows.Forms.DataGridView dgvClass;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox txtChosen;
+        private System.Windows.Forms.TextBox txtChosenSubj;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label31;
@@ -417,5 +467,9 @@
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnFinish;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.TextBox txtChosenSect;
+        private System.Windows.Forms.Label label8;
     }
 }

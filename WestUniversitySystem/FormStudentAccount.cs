@@ -95,139 +95,139 @@ namespace WestUniversitySystem
         //---------------------------------CRUD Methods---------------------------------
         private void AssignValues()
         {
-            long studentNum = Student.ValidateSN(2017);
-            student.Sn = studentNum;
-            student.Password = txtPassword.Text;
-            student.EntryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            student.Level = Convert.ToInt32(txtLevel.Text);
-            student.Status = cmbStatus.Text;
-            student.Course = txtCourse.Text;
-            student.Major = txtMajor.Text;
-            student.LastName = txtLast.Text;
-            student.FirstName = txtFirst.Text;
-            student.MiddleName = txtMiddle.Text;
-            student.Address = txtAddress.Text;
-            student.Sex = cmbSex.Text;
-            student.Bday = dtpBday.Text;
-            student.Bplace = txtBplace.Text;
-            student.Citizenship = txtCitizen.Text;
-            student.Religion = txtReligion.Text;
-            student.Contact = txtContact.Text;
+            try
+            {
+                long studentNum = Student.ValidateSN(2017);
+                student.Sn = studentNum;
+                student.Password = txtPassword.Text;
+                student.EntryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                student.Level = Convert.ToInt32(txtLevel.Text);
+                student.Status = cmbStatus.Text;
+                student.Course = txtCourse.Text;
+                student.Major = txtMajor.Text;
+                student.LastName = txtLast.Text;
+                student.FirstName = txtFirst.Text;
+                student.MiddleName = txtMiddle.Text;
+                student.Address = txtAddress.Text;
+                student.Sex = cmbSex.Text;
+                student.Bday = dtpBday.Text;
+                student.Bplace = txtBplace.Text;
+                student.Citizenship = txtCitizen.Text;
+                student.Religion = txtReligion.Text;
+                student.Contact = txtContact.Text;
 
 
-            education.StudentSn = studentNum;
-            education.FormerSchool = txtFormer.Text;
-            education.FormerYears = txtFormerYear.Text;
-            education.TertiaryEd = txtTertiary.Text;
-            education.TertiaryYears = txtTertiaryYear.Text;
-            education.SecondaryEd = txtSecondary.Text;
-            education.SecondaryYears = txtSecondaryYear.Text;
-            education.PrimaryEd = txtPrimary.Text;
-            education.PrimaryYears = txtPrimaryYear.Text;
+                education.StudentSn = studentNum;
+                education.FormerSchool = txtFormer.Text;
+                education.FormerYears = txtFormerYear.Text;
+                education.TertiaryEd = txtTertiary.Text;
+                education.TertiaryYears = txtTertiaryYear.Text;
+                education.SecondaryEd = txtSecondary.Text;
+                education.SecondaryYears = txtSecondaryYear.Text;
+                education.PrimaryEd = txtPrimary.Text;
+                education.PrimaryYears = txtPrimaryYear.Text;
 
-            requirement.StudentSn = studentNum;
-            requirement.Nsat = Convert.ToInt16(chkNsat.Checked);
-            requirement.Form137 = Convert.ToInt16(chk137.Checked);
-            requirement.TransferCred = Convert.ToInt16(chkTransfer.Checked);
-            requirement.Tor = Convert.ToInt16(chkTor.Checked);
-            requirement.Gmc = Convert.ToInt16(chkGmc.Checked);
-            requirement.BirthCert = Convert.ToInt16(chkBirth.Checked);
+                requirement.StudentSn = studentNum;
+                requirement.Nsat = Convert.ToInt16(chkNsat.Checked);
+                requirement.Form137 = Convert.ToInt16(chk137.Checked);
+                requirement.TransferCred = Convert.ToInt16(chkTransfer.Checked);
+                requirement.Tor = Convert.ToInt16(chkTor.Checked);
+                requirement.Gmc = Convert.ToInt16(chkGmc.Checked);
+                requirement.BirthCert = Convert.ToInt16(chkBirth.Checked);
 
-            family.StudentSn = studentNum;
-            family.DadName = txtDadName.Text;
-            family.DadJob = txtDadJob.Text;
-            family.DadNum = txtDadNum.Text;
-            family.MomName = txtMomName.Text;
-            family.MomJob = txtMomJob.Text;
-            family.MomNum = txtMomNum.Text;
-            family.GuardName = txtGuarName.Text;
-            family.Relation = txtRelation.Text;
-            family.GuardNum = txtGuarNum.Text;
-            family.ParentAdd = txtParentAdd.Text;
+                family.StudentSn = studentNum;
+                family.DadName = txtDadName.Text;
+                family.DadJob = txtDadJob.Text;
+                family.DadNum = txtDadNum.Text;
+                family.MomName = txtMomName.Text;
+                family.MomJob = txtMomJob.Text;
+                family.MomNum = txtMomNum.Text;
+                family.GuardName = txtGuarName.Text;
+                family.Relation = txtRelation.Text;
+                family.GuardNum = txtGuarNum.Text;
+                family.ParentAdd = txtParentAdd.Text;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Source);
+            }
         }
 
         private void AssignValues(long studentNum)
         {
-            student.Sn = studentNum;
-            student.Password = txtPassword.Text;
-            student.EntryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            student.Level = Convert.ToInt32(txtLevel.Text);
-            student.Status = cmbStatus.Text;
-            student.Course = txtCourse.Text;
-            student.Major = txtMajor.Text;
-            student.LastName = txtLast.Text;
-            student.FirstName = txtFirst.Text;
-            student.MiddleName = txtMiddle.Text;
-            student.Address = txtAddress.Text;
-            student.Sex = cmbSex.Text;
-            student.Bday = dtpBday.Text;
-            student.Bplace = txtBplace.Text;
-            student.Citizenship = txtCitizen.Text;
-            student.Religion = txtReligion.Text;
-            student.Contact = txtContact.Text;
+            try
+            {
+                student.Sn = studentNum;
+                student.Password = txtPassword.Text;
+                student.EntryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                student.Level = Convert.ToInt32(txtLevel.Text);
+                student.Status = cmbStatus.Text;
+                student.Course = txtCourse.Text;
+                student.Major = txtMajor.Text;
+                student.LastName = txtLast.Text;
+                student.FirstName = txtFirst.Text;
+                student.MiddleName = txtMiddle.Text;
+                student.Address = txtAddress.Text;
+                student.Sex = cmbSex.Text;
+                student.Bday = dtpBday.Text;
+                student.Bplace = txtBplace.Text;
+                student.Citizenship = txtCitizen.Text;
+                student.Religion = txtReligion.Text;
+                student.Contact = txtContact.Text;
 
 
-            education.StudentSn = studentNum;
-            education.FormerSchool = txtFormer.Text;
-            education.FormerYears = txtFormerYear.Text;
-            education.TertiaryEd = txtTertiary.Text;
-            education.TertiaryYears = txtTertiaryYear.Text;
-            education.SecondaryEd = txtSecondary.Text;
-            education.SecondaryYears = txtSecondaryYear.Text;
-            education.PrimaryEd = txtPrimary.Text;
-            education.PrimaryYears = txtPrimaryYear.Text;
+                education.StudentSn = studentNum;
+                education.FormerSchool = txtFormer.Text;
+                education.FormerYears = txtFormerYear.Text;
+                education.TertiaryEd = txtTertiary.Text;
+                education.TertiaryYears = txtTertiaryYear.Text;
+                education.SecondaryEd = txtSecondary.Text;
+                education.SecondaryYears = txtSecondaryYear.Text;
+                education.PrimaryEd = txtPrimary.Text;
+                education.PrimaryYears = txtPrimaryYear.Text;
 
-            requirement.StudentSn = studentNum;
-            requirement.Nsat = Convert.ToInt16(chkNsat.Checked);
-            requirement.Form137 = Convert.ToInt16(chk137.Checked);
-            requirement.TransferCred = Convert.ToInt16(chkTransfer.Checked);
-            requirement.Tor = Convert.ToInt16(chkTor.Checked);
-            requirement.Gmc = Convert.ToInt16(chkGmc.Checked);
-            requirement.BirthCert = Convert.ToInt16(chkBirth.Checked);
+                requirement.StudentSn = studentNum;
+                requirement.Nsat = Convert.ToInt16(chkNsat.Checked);
+                requirement.Form137 = Convert.ToInt16(chk137.Checked);
+                requirement.TransferCred = Convert.ToInt16(chkTransfer.Checked);
+                requirement.Tor = Convert.ToInt16(chkTor.Checked);
+                requirement.Gmc = Convert.ToInt16(chkGmc.Checked);
+                requirement.BirthCert = Convert.ToInt16(chkBirth.Checked);
 
-            family.StudentSn = studentNum;
-            family.DadName = txtDadName.Text;
-            family.DadJob = txtDadJob.Text;
-            family.DadNum = txtDadNum.Text;
-            family.MomName = txtMomName.Text;
-            family.MomJob = txtMomJob.Text;
-            family.MomNum = txtMomNum.Text;
-            family.GuardName = txtGuarName.Text;
-            family.Relation = txtRelation.Text;
-            family.GuardNum = txtGuarNum.Text;
-            family.ParentAdd = txtParentAdd.Text;
+                family.StudentSn = studentNum;
+                family.DadName = txtDadName.Text;
+                family.DadJob = txtDadJob.Text;
+                family.DadNum = txtDadNum.Text;
+                family.MomName = txtMomName.Text;
+                family.MomJob = txtMomJob.Text;
+                family.MomNum = txtMomNum.Text;
+                family.GuardName = txtGuarName.Text;
+                family.Relation = txtRelation.Text;
+                family.GuardNum = txtGuarNum.Text;
+                family.ParentAdd = txtParentAdd.Text;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Source);
+            }
         }
 
         private void Insert()
         {
-            try
-            {
-                AssignValues();
-                student.Insert();
-                education.Insert();
-                requirement.Insert();
-                family.Insert();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Source);
-            }
+            AssignValues();
+            student.Insert();
+            education.Insert();
+            requirement.Insert();
+            family.Insert();
         }
 
         private void Edit(long sn)
         {
-            try
-            {
-                AssignValues(sn);
-                student.Update();
-                education.Update();
-                requirement.Update();
-                family.Update();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Source);
-            }
+            AssignValues(sn);
+            student.Update();
+            education.Update();
+            requirement.Update();
+            family.Update();
 
         }
 
