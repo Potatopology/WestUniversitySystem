@@ -46,26 +46,23 @@ namespace WestUniversitySystem
         
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            LoadValues(Convert.ToInt64(txtChosen.Text));
-            SetToForm();
-            btnCreate.Visible = false;
-            btnFinish.Visible = true;
-            btnCancel.Visible = true;
+            ActivateEdit();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            ShowDeleteDialog();
         }
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-
+            ValidateEdit();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            ClearForms();
+            Startup();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -86,7 +83,6 @@ namespace WestUniversitySystem
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgvStudent.Rows[e.RowIndex];
-
                 txtChosen.Text = row.Cells["SN"].Value.ToString();
             }
         }
@@ -95,6 +91,58 @@ namespace WestUniversitySystem
         private void AssignValues()
         {
             long studentNum = Student.ValidateSN(2017);
+            student.Sn = studentNum;
+            student.Password = txtPassword.Text;
+            student.EntryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            student.Level = Convert.ToInt32(txtLevel.Text);
+            student.Status = cmbStatus.Text;
+            student.Course = txtCourse.Text;
+            student.Major = txtMajor.Text;
+            student.LastName = txtLast.Text;
+            student.FirstName = txtFirst.Text;
+            student.MiddleName = txtMiddle.Text;
+            student.Address = txtAddress.Text;
+            student.Sex = cmbSex.Text;
+            student.Bday = dtpBday.Text;
+            student.Bplace = txtBplace.Text;
+            student.Citizenship = txtCitizen.Text;
+            student.Religion = txtReligion.Text;
+            student.Contact = txtContact.Text;
+
+
+            education.StudentSn = studentNum;
+            education.FormerSchool = txtFormer.Text;
+            education.FormerYears = txtFormerYear.Text;
+            education.TertiaryEd = txtTertiary.Text;
+            education.TertiaryYears = txtTertiaryYear.Text;
+            education.SecondaryEd = txtSecondary.Text;
+            education.SecondaryYears = txtSecondaryYear.Text;
+            education.PrimaryEd = txtPrimary.Text;
+            education.PrimaryYears = txtPrimaryYear.Text;
+
+            requirement.StudentSn = studentNum;
+            requirement.Nsat = Convert.ToInt16(chkNsat.Checked);
+            requirement.Form137 = Convert.ToInt16(chk137.Checked);
+            requirement.TransferCred = Convert.ToInt16(chkTransfer.Checked);
+            requirement.Tor = Convert.ToInt16(chkTor.Checked);
+            requirement.Gmc = Convert.ToInt16(chkGmc.Checked);
+            requirement.BirthCert = Convert.ToInt16(chkBirth.Checked);
+
+            family.StudentSn = studentNum;
+            family.DadName = txtDadName.Text;
+            family.DadJob = txtDadJob.Text;
+            family.DadNum = txtDadNum.Text;
+            family.MomName = txtMomName.Text;
+            family.MomJob = txtMomJob.Text;
+            family.MomNum = txtMomNum.Text;
+            family.GuardName = txtGuarName.Text;
+            family.Relation = txtRelation.Text;
+            family.GuardNum = txtGuarNum.Text;
+            family.ParentAdd = txtParentAdd.Text;
+        }
+
+        private void AssignValues(long studentNum)
+        {
             student.Sn = studentNum;
             student.Password = txtPassword.Text;
             student.EntryDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
@@ -161,11 +209,11 @@ namespace WestUniversitySystem
             }
         }
 
-        private void Edit()
+        private void Edit(long sn)
         {
             try
             {
-                AssignValues();
+                AssignValues(sn);
                 student.Update();
                 education.Update();
                 requirement.Update();
@@ -252,10 +300,14 @@ namespace WestUniversitySystem
         private void Startup()
         {
             lblName.Text = Nm;
+            btnCreate.Visible = true;
             btnFinish.Visible = false;
             btnCancel.Visible = false;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
             cmbStatus.SelectedIndex = 0;
             cmbSex.SelectedIndex = 0;
+            txtChosen.Text = "";
             DisplayInGrid();
         }
 
@@ -303,6 +355,8 @@ namespace WestUniversitySystem
             txtRelation.Text = "";
             txtGuarNum.Text = "";
             txtParentAdd.Text = "";
+
+            txtChosen.Text = "";
         }
 
         private void DisplayInGrid()
@@ -334,10 +388,36 @@ namespace WestUniversitySystem
 
         private void ShowDeleteDialog()
         {
-            DialogResult dialogResult = MessageBox.Show("You are about to delete, confirm?", "Delete", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (txtChosen.Text == "")
             {
-                //TODO
+                MessageBox.Show("Please select student from list.");
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("You are about to delete, confirm?", "Delete", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Delete();
+                    Startup();
+                }
+            }
+        }
+
+        private void ActivateEdit()
+        {
+            if (txtChosen.Text == "")
+            {
+                MessageBox.Show("Please select student from list.");
+            }
+            else
+            {
+                LoadValues(Convert.ToInt64(txtChosen.Text));
+                SetToForm();
+                btnCreate.Visible = false;
+                btnFinish.Visible = true;
+                btnCancel.Visible = true;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
             }
         }
 
@@ -363,6 +443,27 @@ namespace WestUniversitySystem
             }
         }
 
-        
+        private void ValidateEdit()
+        {
+            if (txtFirst.Text == "" || txtMiddle.Text == "" || txtLast.Text == "" || txtLevel.Text == ""
+                || txtCourse.Text == "" || txtMajor.Text == "" || txtAddress.Text == "" || txtBplace.Text == ""
+                || txtCitizen.Text == "" || txtReligion.Text == "" || txtContact.Text == "" || txtPassword.Text == ""
+                || txtFormer.Text == "" || txtFormerYear.Text == "" || txtTertiary.Text == "" || txtTertiaryYear.Text == ""
+                || txtSecondary.Text == "" || txtSecondaryYear.Text == "" || txtPrimary.Text == "" || txtPrimaryYear.Text == ""
+                || txtDadName.Text == "" || txtDadJob.Text == "" || txtDadNum.Text == ""
+                || txtMomName.Text == "" || txtMomJob.Text == "" || txtMomNum.Text == ""
+                || txtGuarName.Text == "" || txtRelation.Text == "" || txtGuarNum.Text == "" || txtParentAdd.Text == "")
+            {
+                MessageBox.Show("Please fill-in all required information.");
+            }
+            else
+            {
+                Edit(Convert.ToInt64(txtChosen.Text));
+                ClearForms();
+                Startup();
+            }
+        }
+
+        //TODO: Create an adjugate for validate
     }
 }

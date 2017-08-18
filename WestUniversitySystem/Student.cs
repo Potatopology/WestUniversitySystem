@@ -380,7 +380,7 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Student account registered", "Successful");
+                    MessageBox.Show("Student account registered\nSN: " + Sn.ToString(), "Successful");
                 }
             }
             catch (Exception e)
@@ -424,7 +424,7 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Student account registered", "Successful");
+                    MessageBox.Show("Student Information Updated\nSN:" + Sn.ToString(), "Successful");
                 }
             }
             catch (Exception e)
@@ -448,7 +448,7 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Deleted", "Successful");
+                    MessageBox.Show("Student Info Deleted\nSN:" + Sn.ToString(), "Successful");
                 }
             }
             catch (Exception e)
@@ -472,23 +472,23 @@ namespace WestUniversitySystem
                         {
                             while (reader.Read())
                             {
-                                this.Sn = reader.GetInt32(1);
-                                this.Password = reader.GetString(2);
-                                this.EntryDate = reader.GetString(3);
-                                this.Level = reader.GetInt32(4);
-                                this.Status = reader.GetString(5);
-                                this.Course = reader.GetString(6);
-                                this.Major = reader.GetString(7);
-                                this.LastName = reader.GetString(8);
-                                this.FirstName = reader.GetString(9);
-                                this.MiddleName = reader.GetString(10);
-                                this.Address = reader.GetString(11);
-                                this.Sex = reader.GetString(12);
-                                this.Bday = reader.GetString(13);
-                                this.Bplace = reader.GetString(14);
-                                this.Citizenship = reader.GetString(15);
-                                this.Religion = reader.GetString(16);
-                                this.Contact = reader.GetString(17);
+                                this.Sn = reader.GetInt64(0);
+                                this.Password = reader.GetString(1);
+                                this.EntryDate = reader.GetString(2);
+                                this.Level = reader.GetInt32(3);
+                                this.Status = reader.GetString(4);
+                                this.Course = reader.GetString(5);
+                                this.Major = reader.GetString(6);
+                                this.LastName = reader.GetString(7);
+                                this.FirstName = reader.GetString(8);
+                                this.MiddleName = reader.GetString(9);
+                                this.Address = reader.GetString(10);
+                                this.Sex = reader.GetString(11);
+                                this.Bday = reader.GetString(12);
+                                this.Bplace = reader.GetString(13);
+                                this.Citizenship = reader.GetString(14);
+                                this.Religion = reader.GetString(15);
+                                this.Contact = reader.GetString(16);
                             }
                         }
                     }

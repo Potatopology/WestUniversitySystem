@@ -146,7 +146,6 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Requirements", "Successful");
                 }
             }
             catch (Exception e)
@@ -177,7 +176,6 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Requirements", "Successful");
                 }
             }
             catch (Exception e)
@@ -201,7 +199,6 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Deleted Requirements", "Successful");
                 }
             }
             catch (Exception e)
@@ -225,13 +222,13 @@ namespace WestUniversitySystem
                         {
                             while (reader.Read())
                             {
-                                this.StudentSn = reader.GetInt32(2);
-                                this.Nsat = reader.GetInt32(3);
-                                this.Form137 = reader.GetInt32(4);
-                                this.TransferCred = reader.GetInt32(5);
-                                this.Tor = reader.GetInt32(6);
-                                this.Gmc = reader.GetInt32(7);
-                                this.BirthCert = reader.GetInt32(8);
+                                this.StudentSn = reader.GetInt64(1);
+                                this.Nsat = reader.GetInt32(2);
+                                this.Form137 = reader.GetInt32(3);
+                                this.TransferCred = reader.GetInt32(4);
+                                this.Tor = reader.GetInt32(5);
+                                this.Gmc = reader.GetInt32(6);
+                                this.BirthCert = reader.GetInt32(7);
                             }
                         }
                     }

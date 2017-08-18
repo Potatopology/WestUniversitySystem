@@ -210,7 +210,7 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Family", "Successful");
+                    //MessageBox.Show("Family", "Successful");
                 }
             }
             catch (Exception e)
@@ -247,7 +247,7 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Family", "Successful");
+                    //MessageBox.Show("Educ Update\nSN:" + StudentSn.ToString(), "Successful");
                 }
             }
             catch (Exception e)
@@ -271,7 +271,6 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Deleted Family", "Successful");
                 }
             }
             catch (Exception e)
@@ -295,17 +294,17 @@ namespace WestUniversitySystem
                         {
                             while (reader.Read())
                             {
-                                this.StudentSn = reader.GetInt32(2);
-                                this.DadName = reader.GetString(3);
-                                this.DadJob = reader.GetString(4);
-                                this.DadNum = reader.GetString(5);
-                                this.MomName = reader.GetString(6);
-                                this.MomJob = reader.GetString(7);
-                                this.MomNum = reader.GetString(8);
-                                this.GuardName = reader.GetString(9);
-                                this.Relation = reader.GetString(10);
-                                this.GuardNum = reader.GetString(11);
-                                this.ParentAdd = reader.GetString(12);
+                                this.StudentSn = reader.GetInt64(1);
+                                this.DadName = reader.GetString(2);
+                                this.DadJob = reader.GetString(3);
+                                this.DadNum = reader.GetString(4);
+                                this.MomName = reader.GetString(5);
+                                this.MomJob = reader.GetString(6);
+                                this.MomNum = reader.GetString(7);
+                                this.GuardName = reader.GetString(8);
+                                this.Relation = reader.GetString(9);
+                                this.GuardNum = reader.GetString(10);
+                                this.ParentAdd = reader.GetString(11);
                             }
                         }
                     }

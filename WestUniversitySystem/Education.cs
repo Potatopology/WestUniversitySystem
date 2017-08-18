@@ -180,7 +180,6 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Education", "Successful");
                 }
             }
             catch (Exception e)
@@ -194,7 +193,7 @@ namespace WestUniversitySystem
         {
             string query = "UPDATE `educational_background` SET `FormerSchool` = @FormerSchool, "
                 + "`FormerYears` = @FormerYears, `TertiaryEd` = @TertiaryEd, `TertiaryYears` = @TertiaryYears, "
-                + "`SecondaryEd` = 'SOCO', `SecondaryYears` = @SecondaryYears, `PrimaryEd` = @PrimaryEd, "
+                + "`SecondaryEd` = @SecondaryEd, `SecondaryYears` = @SecondaryYears, `PrimaryEd` = @PrimaryEd, "
                 + "`PrimaryYears` = @PrimaryYears WHERE `educational_background`.`StudentSN` = @StudentSN;";
 
             try
@@ -214,7 +213,6 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Education", "Successful");
                 }
             }
             catch (Exception e)
@@ -238,7 +236,6 @@ namespace WestUniversitySystem
                     myCommand.CommandTimeout = 60;
                     myConn.Open();
                     int affectedRows = myCommand.ExecuteNonQuery();
-                    MessageBox.Show("Deleted Education", "Successful");
                 }
             }
             catch (Exception e)
@@ -262,15 +259,15 @@ namespace WestUniversitySystem
                         {
                             while (reader.Read())
                             {
-                                this.studentSn = reader.GetInt32(2);
-                                this.formerSchool = reader.GetString(3);
-                                this.formerYears = reader.GetString(4);
-                                this.tertiaryEd = reader.GetString(5);
-                                this.tertiaryYears = reader.GetString(6);
-                                this.secondaryEd = reader.GetString(7);
-                                this.secondaryYears = reader.GetString(8);
-                                this.primaryEd = reader.GetString(9);
-                                this.primaryYears = reader.GetString(10);
+                                this.studentSn = reader.GetInt64(1);
+                                this.formerSchool = reader.GetString(2);
+                                this.formerYears = reader.GetString(3);
+                                this.tertiaryEd = reader.GetString(4);
+                                this.tertiaryYears = reader.GetString(5);
+                                this.secondaryEd = reader.GetString(6);
+                                this.secondaryYears = reader.GetString(7);
+                                this.primaryEd = reader.GetString(8);
+                                this.primaryYears = reader.GetString(9);
                             }
                         }
                     }
