@@ -67,7 +67,12 @@ namespace WestUniversitySystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            Search(txtSearch.Text);
+        }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            DisplayInGrid();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -249,6 +254,21 @@ namespace WestUniversitySystem
             requirement.LoadValues(sn);
             family.LoadValues(sn);
         }
+        
+        //---------------------------------UI Methods---------------------------------
+        private void Startup()
+        {
+            lblName.Text = Nm;
+            btnCreate.Visible = true;
+            btnFinish.Visible = false;
+            btnCancel.Visible = false;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            cmbStatus.SelectedIndex = 0;
+            cmbSex.SelectedIndex = 0;
+            txtChosen.Text = "";
+            DisplayInGrid();
+        }
 
         private void SetToForm()
         {
@@ -294,21 +314,6 @@ namespace WestUniversitySystem
             txtRelation.Text = family.Relation;
             txtGuarNum.Text = family.GuardNum;
             txtParentAdd.Text = family.ParentAdd;
-        }
-
-        //---------------------------------UI Methods---------------------------------
-        private void Startup()
-        {
-            lblName.Text = Nm;
-            btnCreate.Visible = true;
-            btnFinish.Visible = false;
-            btnCancel.Visible = false;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
-            cmbStatus.SelectedIndex = 0;
-            cmbSex.SelectedIndex = 0;
-            txtChosen.Text = "";
-            DisplayInGrid();
         }
 
         private void ClearForms()
@@ -421,6 +426,38 @@ namespace WestUniversitySystem
             }
         }
 
+        private void Search(string param)
+        {
+            this.dgvStudent.DataSource = null;
+            this.dgvStudent.Rows.Clear();
+
+            string query = "SELECT * FROM enroldb.student_info WHERE SN LIKE '%" + param + "%'"
+                + " OR FirstName LIKE '%" + param + "%'"
+                + " OR MiddleName LIKE '%" + param + "%'"
+                + " OR LastName LIKE '%" + param + "%'"
+                + ";";
+
+            MySqlConnection conDB = new MySqlConnection(connection);
+            MySqlCommand cmdDB = new MySqlCommand(query, conDB);
+
+            try
+            {
+                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+                MyAdapter.SelectCommand = cmdDB;
+                DataTable dTable = new DataTable();
+                MyAdapter.Fill(dTable);
+                BindingSource bSource = new BindingSource();
+
+                bSource.DataSource = dTable;
+                dgvStudent.DataSource = bSource;
+                MyAdapter.Update(dTable);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         //---------------------------------Control Methods---------------------------------
         private void ValidateInsert()
         {
@@ -463,7 +500,7 @@ namespace WestUniversitySystem
                 Startup();
             }
         }
-
+        
         //TODO: Create an adjugate for validate
     }
 }
