@@ -106,6 +106,7 @@
             this.btnLogout.Size = new System.Drawing.Size(30, 30);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // label2
             // 
@@ -241,6 +242,7 @@
             this.btnDelete.TabIndex = 84;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -255,6 +257,7 @@
             this.btnEdit.TabIndex = 83;
             this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // label31
             // 
@@ -294,6 +297,7 @@
             this.btnSearch.Size = new System.Drawing.Size(30, 30);
             this.btnSearch.TabIndex = 89;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnCreate
             // 
@@ -308,6 +312,7 @@
             this.btnCreate.TabIndex = 89;
             this.btnCreate.Text = "ADD SECTION";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnFinish
             // 
@@ -322,6 +327,7 @@
             this.btnFinish.TabIndex = 91;
             this.btnFinish.Text = "FINISH EDIT";
             this.btnFinish.UseVisualStyleBackColor = false;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // btnCancel
             // 
@@ -336,6 +342,7 @@
             this.btnCancel.TabIndex = 90;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FormSubjectInventory
             // 
