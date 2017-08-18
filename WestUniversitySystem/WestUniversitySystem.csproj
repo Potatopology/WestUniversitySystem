@@ -111,8 +111,14 @@
     <EmbeddedResource Include="FormStudentAccount.resx">
       <DependentUpon>FormStudentAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormStudentEnroll.resx">
+      <DependentUpon>FormStudentEnroll.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSubjectInventory.resx">
       <DependentUpon>FormSubjectInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSubjectOffering.resx">
+      <DependentUpon>FormSubjectOffering.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -193,7 +193,7 @@ namespace WestUniversitySystem
             
         }
         
-        private void LoadValues()
+        public void LoadValues()
         {
             try
             {
