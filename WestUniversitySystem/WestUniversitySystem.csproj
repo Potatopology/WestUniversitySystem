@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="ClassSection.cs" />
     <Compile Include="Education.cs" />
+    <Compile Include="Enrollable.cs" />
     <Compile Include="EnrollDatabase.cs" />
     <Compile Include="Family.cs" />
     <Compile Include="Fee.cs" />

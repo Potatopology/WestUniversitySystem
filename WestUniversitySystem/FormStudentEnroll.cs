@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Configuration;
+using System.Diagnostics;
 
 namespace WestUniversitySystem
 {
@@ -23,6 +24,7 @@ namespace WestUniversitySystem
         static string connection = System.Configuration.ConfigurationManager.ConnectionStrings["Test"].ConnectionString;
 
         Fee fee = new Fee();
+        List<Enrollable> enrollable = new List<Enrollable>();
 
         public FormStudentEnroll()
         {
@@ -32,11 +34,14 @@ namespace WestUniversitySystem
         private void FormStudentEnroll_Load(object sender, EventArgs e)
         {
             fee.LoadValues();
+            PopulateChecklistBox(LoadSubjects("Major"), chlMajor);
+            PopulateChecklistBox(LoadSubjects("Minor"), chlMinor);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            DisplayAdded();
+            //btnCompute.Enabled = true;
         }
 
         private void btnCompute_Click(object sender, EventArgs e)
@@ -51,34 +56,48 @@ namespace WestUniversitySystem
 
 
         //-------------------------Methods-----------------------------
-        private Dictionary<string, int> LoadSubjects(string type)
+        private List<Enrollable> LoadSubjects(string type)
         {
-            Dictionary<string, int> subjects = new Dictionary<string, int>();
-            
-            using (MySqlConnection myConn = new MySqlConnection(connection))
+            enrollable = new List<Enrollable>();
+            try
             {
-                myConn.Open();
-                string query = "SELECT code, units, description FROM subjects WHERE type = '" + type + "';";
-                using (MySqlCommand command = new MySqlCommand(query, myConn))
+                using (MySqlConnection myConn = new MySqlConnection(connection))
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    myConn.Open();
+                    string query = "SELECT subject, section, status, units, type FROM class join subjects WHERE class.Subject = subjects.Code AND Type = '" + type + "' AND Status NOT IN ('Closed', 'Dissolved') ORDER BY Subject;";
+                    using (MySqlCommand command = new MySqlCommand(query, myConn))
                     {
-                        while (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            subjects.Add(reader.GetString(0) + " - " + reader.GetString(2) + " (" + reader.GetString(1) + " units)", reader.GetInt32(1));
+                            while (reader.Read())
+                            {
+                                enrollable.Add(new Enrollable()
+                                {
+                                    Subject = reader.GetString(0),
+                                    Section = reader.GetString(1),
+                                    Status = reader.GetString(2),
+                                    Units = reader.GetInt32(3),
+                                    Type = reader.GetString(4)
+                                });
+                            }
                         }
                     }
                 }
             }
-
-            return subjects;
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            Debug.Print(enrollable.ToString());
+            return enrollable;
         }
 
-        private void PopulateChecklistBox(Dictionary<string, int> subjects, CheckedListBox checkListBox)
+        private void PopulateChecklistBox(List<Enrollable> subjects, CheckedListBox checkListBox)
         {
-            foreach (KeyValuePair<string, int> entry in subjects)
+            foreach (Enrollable entry in subjects)
             {
-                checkListBox.Items.Add(entry.Key);
+                Debug.Print(entry.ToString());
+                checkListBox.Items.Add(entry.Subject + " " + entry.Section);
             }
         }
 
@@ -98,16 +117,16 @@ namespace WestUniversitySystem
 
         private int GetMajorUnits()
         {
-            Dictionary<string, int> majorSubjects = LoadSubjects("Major");
+            List<Enrollable> majorSubjects = LoadSubjects("Major");
             int majorUnits = 0;
 
             foreach (object itemChecked in chlMajor.CheckedItems)
             {
-                foreach (KeyValuePair<string, int> item in majorSubjects)
+                foreach (Enrollable item in majorSubjects)
                 {
-                    if (itemChecked.ToString() == item.Key)
+                    if (itemChecked.ToString() == (item.Subject + " " + item.Section))
                     {
-                        majorUnits += item.Value;
+                        majorUnits += item.Units;
                     }
                 }
             }
@@ -116,16 +135,16 @@ namespace WestUniversitySystem
 
         private int GetMinorUnits()
         {
-            Dictionary<string, int> minorSubjects = LoadSubjects("Minor");
+            List<Enrollable> minorSubjects = LoadSubjects("Minor");
             int minorUnits = 0;
 
             foreach (object itemChecked in chlMinor.CheckedItems)
             {
-                foreach (KeyValuePair<string, int> item in minorSubjects)
+                foreach (Enrollable item in minorSubjects)
                 {
-                    if (itemChecked.ToString() == item.Key)
+                    if (itemChecked.ToString() == (item.Subject + " " + item.Section))
                     {
-                        minorUnits += item.Value;
+                        minorUnits += item.Units;
                     }
                 }
             }
