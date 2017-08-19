@@ -16,7 +16,7 @@ namespace WestUniversitySystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormStudentEnroll());
+            Application.Run(new FormLogin());
         }
     }
 }

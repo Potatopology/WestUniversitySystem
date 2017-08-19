@@ -41,17 +41,49 @@ namespace WestUniversitySystem
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DisplayAdded();
-            //btnCompute.Enabled = true;
         }
 
         private void btnCompute_Click(object sender, EventArgs e)
         {
-
+            if (CalculateTuitionFee() == 0)
+            {
+                MessageBox.Show("No subject selected.", "Warning");
+                btnCompute.Enabled = false;
+            }
+            else
+            {
+                DisplaySummary();
+                btnCompute.Enabled = false;
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            rdb1st.Checked = true;
+            rdbCash.Checked = true;
 
+            foreach (int i in chlMajor.CheckedIndices)
+            {
+                chlMajor.SetItemCheckState(i, CheckState.Unchecked);
+            }
+            foreach (int i in chlMinor.CheckedIndices)
+            {
+                chlMinor.SetItemCheckState(i, CheckState.Unchecked);
+            }
+
+            txtAdded.Text = "";
+            txtSummary.Text = "";
+            btnCompute.Enabled = false;
+        }
+
+        private void btnEnroll_Click(object sender, EventArgs e)
+        {
+
+
+
+            txtAdded.Text = "";
+            txtSummary.Text = "";
+            btnCompute.Enabled = false;
         }
 
 
@@ -103,16 +135,36 @@ namespace WestUniversitySystem
 
         private void DisplayAdded()
         {
-            txtAdded.Text = "";
+            bool isDuplicate = false;
+            string temp = "";
+
             foreach (object itemChecked in chlMajor.CheckedItems)
             {
-                txtAdded.Text += itemChecked.ToString() + "\n";
+                if(temp == itemChecked.ToString().Substring(0, 7))
+                {
+                    isDuplicate = true;
+                }
+                temp = itemChecked.ToString().Substring(0, 7);
             }
-            foreach (object itemChecked in chlMinor.CheckedItems)
+
+            if (isDuplicate)
             {
-                txtAdded.Text += itemChecked.ToString() + "\n";
+                MessageBox.Show("You have selected sections with the same subject.\nPlease remove them.");
             }
-            lblTotal.Text = "TOTAL NO. OF UNITS: " + (GetMajorUnits() + GetMinorUnits()).ToString();
+            else
+            {
+                txtAdded.Text = "";
+                foreach (object itemChecked in chlMajor.CheckedItems)
+                {
+                    txtAdded.Text += itemChecked.ToString() + "\n";
+                }
+                foreach (object itemChecked in chlMinor.CheckedItems)
+                {
+                    txtAdded.Text += itemChecked.ToString() + "\n";
+                }
+                lblTotal.Text = "TOTAL NO. OF UNITS: " + (GetMajorUnits() + GetMinorUnits()).ToString();
+                btnCompute.Enabled = true;
+            }
         }
 
         private int GetMajorUnits()
@@ -151,7 +203,53 @@ namespace WestUniversitySystem
             return minorUnits;
         }
 
+        public void Enroll()
+        {
+            foreach (object itemChecked in chlMajor.CheckedItems)
+            {
+                string query = "INSERT INTO `enrolled_class` (`ID`, `SN`, `Subject`, `Section`) VALUES (NULL, @SN, @Subject, @Section);";
 
+                try
+                {
+                    using (MySqlConnection myConn = new MySqlConnection(connection))
+                    using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
+                    {
+                        myCommand.Parameters.AddWithValue("@SN", Nm);
+                        myCommand.Parameters.AddWithValue("@Subject", itemChecked.ToString().Substring(0, 7));
+                        myCommand.Parameters.AddWithValue("@Section", itemChecked.ToString().Substring(8, 12));
+                        myCommand.CommandTimeout = 60;
+                        myConn.Open();
+                        int affectedRows = myCommand.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+            foreach (object itemChecked in chlMinor.CheckedItems)
+            {
+                string query = "INSERT INTO `enrolled_class` (`ID`, `SN`, `Subject`, `Section`) VALUES (NULL, @SN, @Subject, @Section);";
+
+                try
+                {
+                    using (MySqlConnection myConn = new MySqlConnection(connection))
+                    using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
+                    {
+                        myCommand.Parameters.AddWithValue("@SN", Nm);
+                        myCommand.Parameters.AddWithValue("@Subject", itemChecked.ToString().Substring(0, 7));
+                        myCommand.Parameters.AddWithValue("@Section", itemChecked.ToString().Substring(8, 12));
+                        myCommand.CommandTimeout = 60;
+                        myConn.Open();
+                        int affectedRows = myCommand.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
 
 
 
@@ -239,5 +337,7 @@ namespace WestUniversitySystem
                 + "DISCOUNT: " + CalculateDiscount().ToString() + "\n"
                 + "TOTAL PAYMENT: " + CalculateGrossBill().ToString();
         }
+
+        
     }
 }

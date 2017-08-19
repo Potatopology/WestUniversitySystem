@@ -51,6 +51,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnEnroll = new System.Windows.Forms.Button();
             this.grbPay.SuspendLayout();
             this.grbYear.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,9 +68,9 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(362, 392);
+            this.btnAdd.Location = new System.Drawing.Point(350, 407);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(123, 25);
+            this.btnAdd.Size = new System.Drawing.Size(123, 44);
             this.btnAdd.TabIndex = 23;
             this.btnAdd.Text = "Add Subjects";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -232,9 +233,9 @@
             this.btnCompute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompute.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompute.ForeColor = System.Drawing.Color.White;
-            this.btnCompute.Location = new System.Drawing.Point(905, 442);
+            this.btnCompute.Location = new System.Drawing.Point(906, 423);
             this.btnCompute.Name = "btnCompute";
-            this.btnCompute.Size = new System.Drawing.Size(109, 25);
+            this.btnCompute.Size = new System.Drawing.Size(109, 39);
             this.btnCompute.TabIndex = 27;
             this.btnCompute.Text = "Compute";
             this.btnCompute.UseVisualStyleBackColor = false;
@@ -250,9 +251,9 @@
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(1026, 442);
+            this.btnReset.Location = new System.Drawing.Point(1021, 423);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(109, 26);
+            this.btnReset.Size = new System.Drawing.Size(109, 39);
             this.btnReset.TabIndex = 26;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
@@ -311,12 +312,32 @@
             this.btnLogout.TabIndex = 1;
             this.btnLogout.UseVisualStyleBackColor = true;
             // 
+            // btnEnroll
+            // 
+            this.btnEnroll.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnroll.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEnroll.Enabled = false;
+            this.btnEnroll.FlatAppearance.BorderSize = 0;
+            this.btnEnroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnroll.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnroll.ForeColor = System.Drawing.Color.White;
+            this.btnEnroll.Location = new System.Drawing.Point(961, 468);
+            this.btnEnroll.Name = "btnEnroll";
+            this.btnEnroll.Size = new System.Drawing.Size(109, 39);
+            this.btnEnroll.TabIndex = 30;
+            this.btnEnroll.Text = "Enroll";
+            this.btnEnroll.UseVisualStyleBackColor = false;
+            this.btnEnroll.Click += new System.EventHandler(this.btnEnroll_Click);
+            // 
             // FormStudentEnroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1244, 661);
+            this.ClientSize = new System.Drawing.Size(1244, 511);
+            this.Controls.Add(this.btnEnroll);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCompute);
             this.Controls.Add(this.btnReset);
@@ -372,5 +393,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnEnroll;
     }
 }
