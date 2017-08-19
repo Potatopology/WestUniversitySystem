@@ -25,6 +25,7 @@ namespace WestUniversitySystem
 
         Fee fee = new Fee();
         List<Enrollable> enrollable = new List<Enrollable>();
+        ClassSection classSection = new ClassSection();
 
         public FormStudentEnroll()
         {
@@ -33,6 +34,7 @@ namespace WestUniversitySystem
 
         private void FormStudentEnroll_Load(object sender, EventArgs e)
         {
+            lblName.Text = Nm;
             fee.LoadValues();
             PopulateChecklistBox(LoadSubjects("Major"), chlMajor);
             PopulateChecklistBox(LoadSubjects("Minor"), chlMinor);
@@ -54,6 +56,7 @@ namespace WestUniversitySystem
             {
                 DisplaySummary();
                 btnCompute.Enabled = false;
+                btnEnroll.Enabled = true;
             }
         }
 
@@ -74,16 +77,35 @@ namespace WestUniversitySystem
             txtAdded.Text = "";
             txtSummary.Text = "";
             btnCompute.Enabled = false;
+            btnEnroll.Enabled = false;
         }
 
         private void btnEnroll_Click(object sender, EventArgs e)
         {
+            Enroll();
+            rdb1st.Checked = true;
+            rdbCash.Checked = true;
 
-
+            foreach (int i in chlMajor.CheckedIndices)
+            {
+                chlMajor.SetItemCheckState(i, CheckState.Unchecked);
+            }
+            foreach (int i in chlMinor.CheckedIndices)
+            {
+                chlMinor.SetItemCheckState(i, CheckState.Unchecked);
+            }
 
             txtAdded.Text = "";
             txtSummary.Text = "";
             btnCompute.Enabled = false;
+            btnEnroll.Enabled = false;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            FormLogin form = new FormLogin();
+            form.Show();
+            this.Close();
         }
 
 
@@ -216,11 +238,12 @@ namespace WestUniversitySystem
                     {
                         myCommand.Parameters.AddWithValue("@SN", Nm);
                         myCommand.Parameters.AddWithValue("@Subject", itemChecked.ToString().Substring(0, 7));
-                        myCommand.Parameters.AddWithValue("@Section", itemChecked.ToString().Substring(8, 12));
+                        myCommand.Parameters.AddWithValue("@Section", itemChecked.ToString().Substring(7, 6));
                         myCommand.CommandTimeout = 60;
                         myConn.Open();
                         int affectedRows = myCommand.ExecuteNonQuery();
                     }
+                    classSection.CountEnroll(itemChecked.ToString().Substring(0, 7), itemChecked.ToString().Substring(7, 6));
                 }
                 catch (Exception e)
                 {
@@ -238,17 +261,19 @@ namespace WestUniversitySystem
                     {
                         myCommand.Parameters.AddWithValue("@SN", Nm);
                         myCommand.Parameters.AddWithValue("@Subject", itemChecked.ToString().Substring(0, 7));
-                        myCommand.Parameters.AddWithValue("@Section", itemChecked.ToString().Substring(8, 12));
+                        myCommand.Parameters.AddWithValue("@Section", itemChecked.ToString().Substring(7, 6));
                         myCommand.CommandTimeout = 60;
                         myConn.Open();
                         int affectedRows = myCommand.ExecuteNonQuery();
                     }
+                    classSection.CountEnroll(itemChecked.ToString().Substring(0, 7), itemChecked.ToString().Substring(7, 6));
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
                 }
             }
+            btnEnroll.Enabled = false;
         }
 
 

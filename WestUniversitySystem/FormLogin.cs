@@ -42,6 +42,7 @@ namespace WestUniversitySystem
                 else
                 {
                     FormStudentEnroll form = new FormStudentEnroll();
+                    form.Passvalue = txtUser.Text;
                     form.Show();
                     this.Hide();
                 }

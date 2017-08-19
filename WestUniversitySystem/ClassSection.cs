@@ -248,5 +248,46 @@ namespace WestUniversitySystem
                 MessageBox.Show(e.Message);
             }
         }
+
+        public void CountEnroll(string subj, string sect)
+        {
+            LoadValues(subj, sect);
+
+            string query = "UPDATE `class` SET `Enrolled`= @Enrolled,`Available`= @Available WHERE `Subject`= '" + subj + "' AND `Section`= '" + sect + "';";
+
+            try
+            {
+                using (MySqlConnection myConn = new MySqlConnection(connection))
+                using (MySqlCommand myCommand = new MySqlCommand(query, myConn))
+                {
+                    myCommand.Parameters.AddWithValue("@Enrolled", GetCount(subj, sect) + 1);
+                    myCommand.Parameters.AddWithValue("@Available", (this.Size - (GetCount(subj, sect) + 1)).ToString());
+
+                    myCommand.CommandTimeout = 60;
+                    myConn.Open();
+                    int affectedRows = myCommand.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        public int GetCount(string subj, string sect)
+        {
+            string commandLine = "SELECT COUNT(*) FROM enrolled_class WHERE `Subject`= '" + subj + "' AND `Section`= '" + sect + "';";
+
+            using (MySqlConnection connect = new MySqlConnection(connection))
+            using (MySqlCommand cmd = new MySqlCommand(commandLine, connect))
+            {
+                connect.Open();
+                MessageBox.Show(subj + " " + sect);
+                MessageBox.Show(Convert.ToInt32(cmd.ExecuteScalar()).ToString());
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
+
+
     }
 }

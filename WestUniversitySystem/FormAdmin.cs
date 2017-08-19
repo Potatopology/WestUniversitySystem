@@ -58,5 +58,13 @@ namespace WestUniversitySystem
             form.Show();
             this.Close();
         }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            FormSubjectInventory form = new FormSubjectInventory();
+            form.Passvalue = Nm;
+            form.Show();
+            this.Close();
+        }
     }
 }
