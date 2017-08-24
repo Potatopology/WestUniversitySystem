@@ -48,7 +48,7 @@
             this.btnFinish = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtChosenSect = new System.Windows.Forms.TextBox();
+            this.txtChosenCode = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -267,17 +267,17 @@
             this.label8.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(471, 366);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 18);
+            this.label8.Size = new System.Drawing.Size(39, 18);
             this.label8.TabIndex = 204;
-            this.label8.Text = "Section";
+            this.label8.Text = "Code";
             // 
-            // txtChosenSect
+            // txtChosenCode
             // 
-            this.txtChosenSect.Enabled = false;
-            this.txtChosenSect.Location = new System.Drawing.Point(458, 387);
-            this.txtChosenSect.Name = "txtChosenSect";
-            this.txtChosenSect.Size = new System.Drawing.Size(84, 25);
-            this.txtChosenSect.TabIndex = 203;
+            this.txtChosenCode.Enabled = false;
+            this.txtChosenCode.Location = new System.Drawing.Point(458, 387);
+            this.txtChosenCode.Name = "txtChosenCode";
+            this.txtChosenCode.Size = new System.Drawing.Size(84, 25);
+            this.txtChosenCode.TabIndex = 203;
             // 
             // btnDelete
             // 
@@ -346,7 +346,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtChosenSect);
+            this.Controls.Add(this.txtChosenCode);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCreate);
@@ -399,7 +399,7 @@
         private System.Windows.Forms.Button btnFinish;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtChosenSect;
+        private System.Windows.Forms.TextBox txtChosenCode;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Panel panel2;
